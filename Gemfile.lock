@@ -2,11 +2,25 @@ PATH
   remote: .
   specs:
     weneedfeed (0.1.0)
+      faraday
+      nokogiri
 
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    crack (0.4.4)
     diff-lcs (1.4.4)
+    faraday (1.1.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords
+    hashdiff (1.0.1)
+    mini_portile2 (2.4.0)
+    multipart-post (2.1.1)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
+    public_suffix (4.0.6)
     rake (12.3.3)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
@@ -21,6 +35,11 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.4)
+    ruby2_keywords (0.0.2)
+    webmock (3.9.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   ruby
@@ -28,6 +47,7 @@ PLATFORMS
 DEPENDENCIES
   rake (~> 12.0)
   rspec
+  webmock
   weneedfeed!
 
 BUNDLED WITH

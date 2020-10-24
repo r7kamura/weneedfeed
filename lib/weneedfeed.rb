@@ -1,6 +1,5 @@
-require "weneedfeed/version"
+require 'weneedfeed/version'
 
 module Weneedfeed
-  class Error < StandardError; end
-  # Your code goes here...
+  autoload :Page, 'weneedfeed/page'
 end

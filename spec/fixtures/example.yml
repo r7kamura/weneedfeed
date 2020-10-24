@@ -1,0 +1,10 @@
+pages:
+  example:
+    title: example name
+    url: http://example.com/
+    xpath:
+      item: //li
+      item_description: .//p[3]
+      item_link: .//a/@href
+      item_time: .//time/@datetime
+      item_title: .//p[2]
