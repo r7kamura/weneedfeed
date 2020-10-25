@@ -8,7 +8,6 @@ module Weneedfeed
     # @param [String] item_time_xpath
     # @param [String] item_title_xpath
     # @param [String] item_xpath
-    # @param [String] name
     # @param [String] title
     # @param [String] url
     def initialize(
@@ -17,7 +16,6 @@ module Weneedfeed
       item_time_xpath:,
       item_title_xpath:,
       item_xpath:,
-      name:,
       title:,
       url:
     )
@@ -26,7 +24,6 @@ module Weneedfeed
       @item_time_xpath = item_time_xpath
       @item_title_xpath = item_title_xpath
       @item_xpath = item_xpath
-      @name = name
       @title = title
       @url = url
     end

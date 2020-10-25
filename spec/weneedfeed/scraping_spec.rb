@@ -13,7 +13,6 @@ RSpec.describe Weneedfeed::Scraping do
 
   let(:scraping) do
     described_class.new(
-      name: 'example',
       item_description_xpath: properties['xpath']['item_description'],
       item_link_xpath: properties['xpath']['item_link'],
       item_time_xpath: properties['xpath']['item_time'],
