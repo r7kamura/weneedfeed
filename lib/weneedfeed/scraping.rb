@@ -40,6 +40,7 @@ module Weneedfeed
         item_link_xpath: @item_link_xpath,
         item_time_xpath: @item_time_xpath,
         item_title_xpath: @item_title_xpath,
+        url: @url,
       )
     end
 
