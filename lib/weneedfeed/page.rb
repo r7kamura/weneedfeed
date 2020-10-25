@@ -1,11 +1,18 @@
 module Weneedfeed
   class Page
+    # @return [String]
+    attr_reader :title
+
+    # @return [String]
+    attr_reader :url
+
     # @param [String] item_description_xpath
     # @param [String] item_link_xpath
     # @param [String] item_time_xpath
     # @param [String] item_title_xpath
     # @param [String] item_xpath
     # @param [Nokogiri::Node] node
+    # @param [String] title
     # @param [String] url
     def initialize(
       item_description_xpath:,
@@ -14,6 +21,7 @@ module Weneedfeed
       item_title_xpath:,
       item_xpath:,
       node:,
+      title:,
       url:
     )
       @item_description_xpath = item_description_xpath
@@ -22,6 +30,7 @@ module Weneedfeed
       @item_title_xpath = item_title_xpath
       @item_xpath = item_xpath
       @node = node
+      @title = title
       @url = url
     end
 
