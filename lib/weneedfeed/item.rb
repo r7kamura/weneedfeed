@@ -38,6 +38,7 @@ module Weneedfeed
     # @return [Time, nil]
     def time
       ::Time.parse(@node.xpath(@time_xpath).inner_html)
+    rescue ::ArgumentError
     end
 
     # @return [String, nil]
