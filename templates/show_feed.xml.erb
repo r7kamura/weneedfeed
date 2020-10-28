@@ -6,7 +6,7 @@
     <description></description>
     <link><%= request.base_url %></link>
     <atom:link href="<%= request.base_url %>/<%= page_name %>" rel="self"/>
-    <title>r7kamura.com</title>
+    <title><%= @page.title %></title>
     <% items.each do |item| %>
     <item>
       <title><![CDATA[<%= item.title %>]]></title>
