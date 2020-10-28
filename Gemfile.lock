@@ -5,6 +5,7 @@ PATH
       faraday
       hibana
       nokogiri
+      rack-capture
 
 GEM
   remote: https://rubygems.org/
@@ -38,6 +39,8 @@ GEM
       mini_portile2 (~> 2.4.0)
     public_suffix (4.0.6)
     rack (2.2.3)
+    rack-capture (0.1.2)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rake (12.3.3)
