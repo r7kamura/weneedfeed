@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Weneedfeed</title>
+  </head>
+  <body>
+    <ul>
+      <% @pages.each do |page_name, hash| %>
+      <li>
+        <a href="/<%= page_name %>"><%= hash['title'] %>
+      </li>
+      <% end %>
+    </ul>
+  </body>
+</html>

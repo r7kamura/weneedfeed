@@ -3,6 +3,7 @@ require 'hibana'
 module Weneedfeed
   class Application < ::Hibana::Application
     route do
+      get '/', to: ::Weneedfeed::Controllers::ShowTopPage
       get '/:page_name', to: ::Weneedfeed::Controllers::ShowFeed
     end
 
