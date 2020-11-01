@@ -3,14 +3,20 @@ module Weneedfeed
     class ShowFeed < ::Hibana::Controller
       def call
         env = request.env
+        page_name = env.dig(
+          'router.params',
+          :page_name
+        )
         properties = env.dig(
           'weneedfeed.schema',
           'pages',
-          env.dig(
-            'router.params',
-            :page_name
-          )
+          page_name
         )
+        unless properties
+          response.status = 404
+          return
+        end
+
         scraping = ::Weneedfeed::Scraping.new(
           item_description_xpath: properties['xpath']['item_description'],
           item_link_xpath: properties['xpath']['item_link'],
