@@ -17,5 +17,12 @@ module Weneedfeed
       env['weneedfeed.schema'] = @schema
       super
     end
+
+    # @return [Array<String>]
+    def paths
+      ['/'] + @schema['pages'].keys.map do |key|
+        "/#{key}"
+      end
+    end
   end
 end
