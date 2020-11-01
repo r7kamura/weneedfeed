@@ -1,5 +1,18 @@
 module Weneedfeed
   class Item
+    class << self
+      # @param [String] string
+      # @return [Time, nil]
+      def parse_time(string)
+        ::Time.parse(string)
+      rescue ArgumentError, RangeError
+        begin
+          ::Time.strptime(string, '%Y年%m月%d日')
+        rescue ArgumentError
+        end
+      end
+    end
+
     # @param [String] description_xpath
     # @param [String] link_xpath
     # @param [Nokogiri::Node] node
@@ -37,13 +50,19 @@ module Weneedfeed
 
     # @return [Time, nil]
     def time
-      ::Time.parse(@node.xpath(@time_xpath).inner_html)
-    rescue ::ArgumentError
+      self.class.parse_time(time_string)
     end
 
     # @return [String, nil]
     def title
       @node.xpath(@title_xpath).inner_text
+    end
+
+    private
+
+    # @return [String]
+    def time_string
+      @node.xpath(@time_xpath).inner_html
     end
   end
 end
