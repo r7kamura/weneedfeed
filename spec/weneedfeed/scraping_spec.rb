@@ -34,7 +34,7 @@ RSpec.describe Weneedfeed::Scraping do
       page = subject
       expect(page.items[0].description).to eq('This is episode 3.')
       expect(page.items[0].link).to eq('http://example.com/articles/01-03')
-      expect(page.items[0].time).to eq(Time.new(2000, 1, 3))
+      expect(page.items[0].time).to eq(Time.new(2000, 1, 3, 0, 0, 0, '+09:00'))
       expect(page.items[0].title).to eq('Episode 3')
     end
   end
