@@ -23,7 +23,9 @@ Or install it yourself as:
 
 ## Usage
 
-Write weneedfeed.yml:
+This gem provides `Weneedfeed::Application` as a Rack application.
+
+Write schema (YAML format is recommended):
 
 ```yaml
 pages:
@@ -38,7 +40,21 @@ pages:
       item_title: .//p[2]
 ```
 
-then... (TODO: Write usage instructions here)
+And then pass it to `Weneedfeed::Application.new`:
+
+```ruby
+# config.ru
+require 'weneedfeed'
+
+run Weneedfeed::Application.new(
+  schema: YAML.load_file('spec/fixtures/example.yml')
+)
+```
+
+This application will provides the following endpoints:
+
+- `GET /` - Index page of RSS feeds.
+- `GET /example` - RSS feed for `example`.
 
 ## Development
 
