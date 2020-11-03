@@ -21,7 +21,7 @@ RSpec.describe Weneedfeed::Application do
     it 'returns RSS feed' do
       subject
       expect(last_response.status).to eq(200)
-      expect(last_response.content_type).to include('application/rss+xml')
+      expect(last_response.content_type).to include('application/xml')
     end
   end
 end

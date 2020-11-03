@@ -28,7 +28,7 @@ module Weneedfeed
         )
         page = scraping.call
 
-        response.content_type = 'application/rss+xml; charset=utf-8'
+        response.content_type = 'application/xml; charset=utf-8'
         response.write(
           ::Weneedfeed::Views::ShowFeed.new(
             page: page,
