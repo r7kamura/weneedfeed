@@ -40,26 +40,23 @@ module Weneedfeed
 
     # @return [Weneedfeed::Application]
     def app
-      @app ||= ::Weneedfeed::Application.new(schema: schema)
-    end
-
-    # @return [Array<String>]
-    def page_names
-      schema['pages'].keys
+      @app ||= ::Weneedfeed::Application.new(
+        schema: ::YAML.load_file(@schema_path)
+      )
     end
 
     # @return [Hash]
     def schema
-      @schema ||= ::YAML.load_file(@schema_path)
+      ::YAML.load_file(@schema_path)
     end
 
     # @return [Array<String>]
     def urls
-      page_names.map do |page_name|
+      app.paths.map do |path|
         [
           @base_url,
-          page_name,
-        ].join('/')
+          path,
+        ].join
       end
     end
   end
