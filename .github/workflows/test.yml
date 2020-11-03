@@ -1,0 +1,18 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7.2'
+      - run: bundle install --jobs=$(($(nproc) - 1)) --retry=3
+      - run: bundle exec rubocop --color --parallel
+      - run: bundle exec rspec --force-color
+
+
