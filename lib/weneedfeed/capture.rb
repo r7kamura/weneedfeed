@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rack/capture'
 require 'yaml'
 
@@ -12,7 +14,7 @@ module Weneedfeed
       )
         new(
           base_url: base_url,
-          schema_path: schema_path,
+          schema_path: schema_path
         ).call
       end
     end
@@ -31,7 +33,7 @@ module Weneedfeed
       urls.each do |url|
         ::Rack::Capture.call(
           app: app,
-          url: url,
+          url: url
         )
       end
     end
@@ -55,7 +57,7 @@ module Weneedfeed
       app.paths.map do |path|
         [
           @base_url,
-          path,
+          path
         ].join
       end
     end

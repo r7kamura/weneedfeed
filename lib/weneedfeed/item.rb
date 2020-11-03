@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Weneedfeed
   class Item
     class << self

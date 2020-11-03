@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Weneedfeed
   module Controllers
     autoload :ShowFeed, 'weneedfeed/controllers/show_feed'

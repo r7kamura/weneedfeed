@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Weneedfeed::Application do
   include Rack::Test::Methods
 

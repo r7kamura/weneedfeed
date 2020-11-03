@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Weneedfeed
   module Views
     class ShowFeed < ::Hibana::View

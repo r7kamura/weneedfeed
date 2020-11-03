@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday'
 require 'nokogiri'
 
@@ -38,7 +40,7 @@ module Weneedfeed
         item_time_xpath: @item_time_xpath,
         item_title_xpath: @item_title_xpath,
         title: @title,
-        url: @url,
+        url: @url
       )
     end
 

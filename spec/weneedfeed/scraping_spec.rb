@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 
 RSpec.describe Weneedfeed::Scraping do
@@ -19,7 +21,7 @@ RSpec.describe Weneedfeed::Scraping do
       item_title_xpath: properties['xpath']['item_title'],
       item_xpath: properties['xpath']['item'],
       title: properties['title'],
-      url: properties['url'],
+      url: properties['url']
     )
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Weneedfeed
   module Controllers
     class ShowFeed < ::Hibana::Controller
@@ -24,7 +26,7 @@ module Weneedfeed
           item_title_xpath: properties['xpath']['item_title'],
           item_xpath: properties['xpath']['item'],
           title: properties['title'],
-          url: properties['url'],
+          url: properties['url']
         )
         page = scraping.call
 
@@ -33,7 +35,7 @@ module Weneedfeed
           ::Weneedfeed::Views::ShowFeed.new(
             page: page,
             partial_template_path: 'templates/show_feed.xml.erb',
-            request: request,
+            request: request
           ).to_s
         )
       end
