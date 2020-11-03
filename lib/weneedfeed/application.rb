@@ -12,6 +12,7 @@ module Weneedfeed
     # @param [Hash] schema
     def initialize(schema:)
       @schema = schema
+      super()
     end
 
     # @param [Hash] env
