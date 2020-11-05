@@ -26,9 +26,7 @@ gem install weneedfeed
 
 ## Usage
 
-This gem provides `Weneedfeed::Application` as a Rack application.
-
-Write schema (YAML format is recommended):
+Write schema:
 
 ```yaml
 pages:
@@ -43,21 +41,21 @@ pages:
       item_title: .//p[2]
 ```
 
-And then pass it to `Weneedfeed::Application.new`:
+And then call `Weneedfeed::Capture`:
 
 ```ruby
-# config.ru
 require 'weneedfeed'
 
-run Weneedfeed::Application.new(
-  schema: YAML.load_file('spec/fixtures/example.yml')
+Weneedfeed::Capture.call(
+  base_url: 'https://user.github.io/repo',
+  schema_path: 'schema.yml'
 )
 ```
 
-This application will provides the following endpoints:
+These files will be generated:
 
-- `GET /` - Index page of RSS feeds.
-- `GET /example` - RSS feed for `example`.
+- output/index.html
+- output/feeds/example.xml
 
 ## Development
 
