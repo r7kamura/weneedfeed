@@ -27,9 +27,9 @@ RSpec.describe Weneedfeed::Application do
     end
   end
 
-  describe 'GET /example' do
+  describe 'GET /feeds/example' do
     subject do
-      get '/example'
+      get '/feeds/example'
     end
 
     it 'returns RSS feed' do
