@@ -17,6 +17,7 @@ And then execute:
 
 ```sh
 bundle install
+```
 
 Or install it yourself as:
 
