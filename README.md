@@ -1,7 +1,7 @@
 # Weneedfeed
 
 [![](https://badge.fury.io/rb/weneedfeed.svg)](https://rubygems.org/gems/weneedfeed)
-[![](https://github.com/r7kamura/weneedfeed/workflows/.github/workflows/test.yml/badge.svg)](https://github.com/r7kamura/weneedfeed/actions?query=workflow%3A.github%2Fworkflows%2Ftest.yml)
+[![](https://github.com/r7kamura/weneedfeed/workflows/.github/workflows/test/badge.svg)](https://github.com/r7kamura/weneedfeed/actions?query=workflow%3A.github%2Fworkflows%2Ftest)
 
 Generate feeds from URL and XPath.
 
