@@ -15,6 +15,18 @@ RSpec.describe Weneedfeed::Application do
     )
   end
 
+  describe 'GET /' do
+    subject do
+      get '/'
+    end
+
+    it 'returns HTML page' do
+      subject
+      expect(last_response.status).to eq(200)
+      expect(last_response.content_type).to include('text/html')
+    end
+  end
+
   describe 'GET /example' do
     subject do
       get '/example'
