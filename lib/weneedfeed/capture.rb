@@ -33,6 +33,7 @@ module Weneedfeed
       urls.each do |url|
         ::Rack::Capture.call(
           app: app,
+          script_name: script_name,
           url: url
         )
       end
@@ -47,9 +48,24 @@ module Weneedfeed
       )
     end
 
+    # @return [URI]
+    def base_uri
+      @base_uri ||= ::URI.parse(@base_url)
+    end
+
     # @return [Hash]
     def schema
       ::YAML.load_file(@schema_path)
+    end
+
+    # @return [String]
+    def script_name
+      case base_uri.path
+      when '', '/'
+        ''
+      else
+        base_uri.path
+      end
     end
 
     # @return [Array<String>]

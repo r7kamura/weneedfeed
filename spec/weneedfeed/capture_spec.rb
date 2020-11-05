@@ -27,10 +27,25 @@ RSpec.describe Weneedfeed::Capture do
       'http://example.com'
     end
 
-    it 'generates static files' do
-      subject
-      expect(File).to be_file('output/index.html')
-      expect(File).to be_file('output/feeds/example.xml')
+    context 'with ordinary situation' do
+      it 'generates static files' do
+        subject
+        expect(File).to be_file('output/index.html')
+        expect(File).to be_file('output/feeds/example.xml')
+      end
+    end
+
+    context 'with base_url path' do
+      let(:base_url) do
+        "#{super()}/a"
+      end
+
+      it 'generates feed with expected link' do
+        subject
+        expect(File).to be_file('output/index.html')
+        expect(File).to be_file('output/feeds/example.xml')
+        expect(File.read('output/feeds/example.xml')).to include('http://example.com/a/feeds/example.xml')
+      end
     end
   end
 end
