@@ -6,7 +6,7 @@ module Weneedfeed
   class Application < ::Hibana::Application
     route do
       get '/', to: ::Weneedfeed::Controllers::ShowTopPage
-      get '/feeds/:page_name', to: ::Weneedfeed::Controllers::ShowFeed
+      get '/feeds/:page_name.xml', to: ::Weneedfeed::Controllers::ShowFeed
     end
 
     # @param [Hash] schema
@@ -23,8 +23,8 @@ module Weneedfeed
 
     # @return [Array<String>]
     def paths
-      ['/'] + @schema['pages'].keys.map do |key|
-        "/feeds/#{key}"
+      ['/'] + @schema['pages'].keys.map do |page_name|
+        "/feeds/#{page_name}.xml"
       end
     end
   end

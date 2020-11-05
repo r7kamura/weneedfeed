@@ -30,7 +30,7 @@ RSpec.describe Weneedfeed::Capture do
     it 'generates static files' do
       subject
       expect(File).to be_file('output/index.html')
-      expect(File).to be_file('output/feeds/example')
+      expect(File).to be_file('output/feeds/example.xml')
     end
   end
 end
