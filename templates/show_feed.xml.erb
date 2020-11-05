@@ -5,7 +5,7 @@
   <channel>
     <description></description>
     <link><%= request.base_url %></link>
-    <atom:link href="<%= request.base_url %>/<%= page_name %>" rel="self"/>
+    <atom:link href="<%= request.base_url %>/feeds/<%= page_name %>" rel="self"/>
     <title><%= @page.title %></title>
     <lastBuildDate><%= Time.now.rfc822 %></lastBuildDate>
     <% items.each do |item| %>
