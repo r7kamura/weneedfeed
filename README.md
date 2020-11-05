@@ -15,11 +15,14 @@ gem 'weneedfeed'
 
 And then execute:
 
-    bundle install
+```sh
+bundle install
 
 Or install it yourself as:
 
-    gem install weneedfeed
+```sh
+gem install weneedfeed
+```
 
 ## Usage
 
