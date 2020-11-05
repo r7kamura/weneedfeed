@@ -12,7 +12,10 @@ module Weneedfeed
         response.write(
           ::Weneedfeed::Views::ShowTopPage.new(
             pages: pages,
-            partial_template_path: 'templates/show_top_page.html.erb',
+            partial_template_path: ::File.expand_path(
+              'templates/show_top_page.html.erb',
+              "#{__dir__}/../../.."
+            ),
             request: request
           ).to_s
         )

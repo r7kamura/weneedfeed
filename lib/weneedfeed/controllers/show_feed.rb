@@ -34,7 +34,10 @@ module Weneedfeed
         response.write(
           ::Weneedfeed::Views::ShowFeed.new(
             page: page,
-            partial_template_path: 'templates/show_feed.xml.erb',
+            partial_template_path: ::File.expand_path(
+              'templates/show_feed.xml.erb',
+              "#{__dir__}/../../.."
+            ),
             request: request
           ).to_s
         )
