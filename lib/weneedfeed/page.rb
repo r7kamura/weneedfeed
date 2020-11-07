@@ -8,29 +8,29 @@ module Weneedfeed
     # @return [String]
     attr_reader :url
 
-    # @param [String] item_description_xpath
-    # @param [String] item_link_xpath
-    # @param [String] item_time_xpath
-    # @param [String] item_title_xpath
-    # @param [String] item_xpath
+    # @param [String] item_description_selector
+    # @param [String] item_link_selector
+    # @param [String] item_time_selector
+    # @param [String] item_title_selector
+    # @param [String] item_selector
     # @param [Nokogiri::Node] node
     # @param [String] title
     # @param [String] url
     def initialize(
-      item_description_xpath:,
-      item_link_xpath:,
-      item_time_xpath:,
-      item_title_xpath:,
-      item_xpath:,
+      item_description_selector:,
+      item_link_selector:,
+      item_time_selector:,
+      item_title_selector:,
+      item_selector:,
       node:,
       title:,
       url:
     )
-      @item_description_xpath = item_description_xpath
-      @item_link_xpath = item_link_xpath
-      @item_time_xpath = item_time_xpath
-      @item_title_xpath = item_title_xpath
-      @item_xpath = item_xpath
+      @item_description_selector = item_description_selector
+      @item_link_selector = item_link_selector
+      @item_time_selector = item_time_selector
+      @item_title_selector = item_title_selector
+      @item_selector = item_selector
       @node = node
       @title = title
       @url = url
@@ -38,13 +38,13 @@ module Weneedfeed
 
     # @return [Array<Weneedfeed::Item>]
     def items
-      @node.xpath(@item_xpath).map do |node|
+      @node.search(@item_selector).map do |node|
         ::Weneedfeed::Item.new(
-          description_xpath: @item_description_xpath,
-          link_xpath: @item_link_xpath,
+          description_selector: @item_description_selector,
+          link_selector: @item_link_selector,
           node: node,
-          time_xpath: @item_time_xpath,
-          title_xpath: @item_title_xpath,
+          time_selector: @item_time_selector,
+          title_selector: @item_title_selector,
           url: @url
         )
       end

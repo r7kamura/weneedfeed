@@ -1,10 +1,19 @@
 pages:
-  example:
+  example_css:
     title: example name
     url: http://example.com/
-    xpath:
+    selectors:
+      item: li
+      item_description: p:nth-child(3)
+      item_link: a
+      item_time: time[datetime]
+      item_title: p:nth-child(2)
+  example_xpath:
+    title: example name
+    url: http://example.com/
+    selectors:
       item: //li
       item_description: .//p[3]
-      item_link: .//a/@href
+      item_link: .//a
       item_time: .//time/@datetime
       item_title: .//p[2]

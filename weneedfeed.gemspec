@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Ryo Nakamura']
   spec.email         = ['r7kamura@gmail.com']
 
-  spec.summary       = 'Generate feeds from URL and XPath.'
+  spec.summary       = 'Generate feeds from URL and selectors.'
   spec.homepage      = 'https://github.com/r7kamura/weneedfeed'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')

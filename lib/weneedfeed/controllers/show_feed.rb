@@ -20,11 +20,11 @@ module Weneedfeed
         end
 
         scraping = ::Weneedfeed::Scraping.new(
-          item_description_xpath: properties['xpath']['item_description'],
-          item_link_xpath: properties['xpath']['item_link'],
-          item_time_xpath: properties['xpath']['item_time'],
-          item_title_xpath: properties['xpath']['item_title'],
-          item_xpath: properties['xpath']['item'],
+          item_description_selector: properties['selectors']['item_description'],
+          item_link_selector: properties['selectors']['item_link'],
+          item_time_selector: properties['selectors']['item_time'],
+          item_title_selector: properties['selectors']['item_title'],
+          item_selector: properties['selectors']['item'],
           title: properties['title'],
           url: properties['url']
         )

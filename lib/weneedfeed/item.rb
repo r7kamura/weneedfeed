@@ -15,38 +15,38 @@ module Weneedfeed
       end
     end
 
-    # @param [String] description_xpath
-    # @param [String] link_xpath
+    # @param [String] description_selector
+    # @param [String] link_selector
     # @param [Nokogiri::Node] node
-    # @param [String] time_xpath
-    # @param [String] title_xpath
+    # @param [String] time_selector
+    # @param [String] title_selector
     # @param [String] url
     def initialize(
-      description_xpath:,
-      link_xpath:,
+      description_selector:,
+      link_selector:,
       node:,
-      time_xpath:,
-      title_xpath:,
+      time_selector:,
+      title_selector:,
       url:
     )
-      @description_xpath = description_xpath
-      @link_xpath = link_xpath
+      @description_selector = description_selector
+      @link_selector = link_selector
       @node = node
-      @time_xpath = time_xpath
-      @title_xpath = title_xpath
+      @time_selector = time_selector
+      @title_selector = title_selector
       @url = url
     end
 
     # @return [String, nil]
     def description
-      @node.xpath(@description_xpath).inner_html
+      @node.at(@description_selector).inner_html
     end
 
     # @return [String]
     def link
       ::URI.join(
         @url,
-        @node.xpath(@link_xpath).inner_html
+        @node.at(@link_selector)['href']
       ).to_s
     end
 
@@ -57,14 +57,14 @@ module Weneedfeed
 
     # @return [String, nil]
     def title
-      @node.xpath(@title_xpath).inner_text
+      @node.at(@title_selector).inner_text
     end
 
     private
 
     # @return [String]
     def time_string
-      @node.xpath(@time_xpath).inner_html
+      @node.at(@time_selector).inner_html
     end
   end
 end

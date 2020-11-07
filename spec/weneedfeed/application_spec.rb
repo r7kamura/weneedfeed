@@ -27,9 +27,21 @@ RSpec.describe Weneedfeed::Application do
     end
   end
 
-  describe 'GET /feeds/example.xml' do
+  describe 'GET /feeds/example_css.xml' do
     subject do
-      get '/feeds/example.xml'
+      get '/feeds/example_css.xml'
+    end
+
+    it 'returns RSS feed' do
+      subject
+      expect(last_response.status).to eq(200)
+      expect(last_response.content_type).to include('application/xml')
+    end
+  end
+
+  describe 'GET /feeds/example_xpath.xml' do
+    subject do
+      get '/feeds/example_xpath.xml'
     end
 
     it 'returns RSS feed' do

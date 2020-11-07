@@ -3,7 +3,7 @@
 [![](https://badge.fury.io/rb/weneedfeed.svg)](https://rubygems.org/gems/weneedfeed)
 [![](https://github.com/r7kamura/weneedfeed/workflows/test/badge.svg)](https://github.com/r7kamura/weneedfeed/actions?query=workflow%3Atest)
 
-Generate feeds from URL and XPath.
+Generate feeds from URL and selectors.
 
 ## Installation
 
@@ -36,16 +36,16 @@ pages:
   example1:
     title: example site 1
     url: http://example.com/1
-    xpath:
-      item: //li
-      item_description: .//p[3]
-      item_link: .//a/@href
-      item_time: .//time/@datetime
-      item_title: .//p[2]
+    selectors:
+      item: li
+      item_description: p:nth-child(3)
+      item_link: a
+      item_time: time[datetime]
+      item_title: p:nth-child(2)
   example2:
     title: example site 2
     url: http://example.com/2
-    xpath:
+    selectors:
       item: //li
       item_description: .//p[3]
       item_link: .//a/@href
