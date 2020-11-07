@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add channel description.
 - Add item description.
+- Add `weneedfeed build` command.
+- Add `weneedfeed server` command.
 
 ### Changed
 
