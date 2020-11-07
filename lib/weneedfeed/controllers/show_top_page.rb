@@ -7,7 +7,9 @@ module Weneedfeed
         pages = request.env.dig(
           'weneedfeed.schema',
           'pages'
-        )
+        ).sort_by do |_key, value|
+          value['title']
+        end
         response.content_type = 'text/html'
         response.write(
           ::Weneedfeed::Views::ShowTopPage.new(

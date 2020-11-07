@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change `weneedfeed build` description.
 - Change `weneedfeed server` description.
 - Change channel link from feed URL to top page URL.
+- Sort top page feeds by its title.
 
 ## 0.3.0 - 2020-11-08
 
