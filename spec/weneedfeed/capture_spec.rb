@@ -31,7 +31,7 @@ RSpec.describe Weneedfeed::Capture do
       it 'generates static files' do
         subject
         expect(File).to be_file('output/index.html')
-        expect(File).to be_file('output/feeds/example.xml')
+        expect(File).to be_file('output/feeds/example_css.xml')
       end
     end
 
@@ -43,8 +43,8 @@ RSpec.describe Weneedfeed::Capture do
       it 'generates feed with expected link' do
         subject
         expect(File).to be_file('output/index.html')
-        expect(File).to be_file('output/feeds/example.xml')
-        expect(File.read('output/feeds/example.xml')).to include('http://example.com/a/feeds/example.xml')
+        expect(File).to be_file('output/feeds/example_css.xml')
+        expect(File.read('output/feeds/example_css.xml')).to include('http://example.com/a/feeds/example_css.xml')
       end
     end
   end

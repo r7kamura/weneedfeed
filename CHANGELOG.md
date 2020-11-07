@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Add CSS selector support.
+
 ### Changed
 
+- Change schema key from `xpath` to `selectors`.
+- Change item_link_selector target from href attribute to a element.
+- Change some argument names from `_xpath` to `_selector`.
 - Change `weneedfeed build` description.
 - Change `weneedfeed server` description.
 - Change channel link from feed URL to top page URL.

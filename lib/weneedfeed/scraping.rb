@@ -5,27 +5,27 @@ require 'nokogiri'
 
 module Weneedfeed
   class Scraping
-    # @param [String] item_description_xpath
-    # @param [String] item_link_xpath
-    # @param [String] item_time_xpath
-    # @param [String] item_title_xpath
-    # @param [String] item_xpath
+    # @param [String] item_description_selector
+    # @param [String] item_link_selector
+    # @param [String] item_time_selector
+    # @param [String] item_title_selector
+    # @param [String] item_selector
     # @param [String] title
     # @param [String] url
     def initialize(
-      item_description_xpath:,
-      item_link_xpath:,
-      item_time_xpath:,
-      item_title_xpath:,
-      item_xpath:,
+      item_description_selector:,
+      item_link_selector:,
+      item_time_selector:,
+      item_title_selector:,
+      item_selector:,
       title:,
       url:
     )
-      @item_description_xpath = item_description_xpath
-      @item_link_xpath = item_link_xpath
-      @item_time_xpath = item_time_xpath
-      @item_title_xpath = item_title_xpath
-      @item_xpath = item_xpath
+      @item_description_selector = item_description_selector
+      @item_link_selector = item_link_selector
+      @item_time_selector = item_time_selector
+      @item_title_selector = item_title_selector
+      @item_selector = item_selector
       @title = title
       @url = url
     end
@@ -34,11 +34,11 @@ module Weneedfeed
     def call
       ::Weneedfeed::Page.new(
         node: parsed_body,
-        item_description_xpath: @item_description_xpath,
-        item_xpath: @item_xpath,
-        item_link_xpath: @item_link_xpath,
-        item_time_xpath: @item_time_xpath,
-        item_title_xpath: @item_title_xpath,
+        item_description_selector: @item_description_selector,
+        item_selector: @item_selector,
+        item_link_selector: @item_link_selector,
+        item_time_selector: @item_time_selector,
+        item_title_selector: @item_title_selector,
         title: @title,
         url: @url
       )
