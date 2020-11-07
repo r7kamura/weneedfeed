@@ -3,10 +3,10 @@
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <description></description>
+    <title><![CDATA[<%= @page.title %>]]></title>
     <link><%= "#{request.base_url}#{request.path}" %></link>
     <atom:link href="<%= "#{request.base_url}#{request.path}" %>" rel="self"/>
-    <title><![CDATA[<%= @page.title %>]]></title>
+    <description></description>
     <lastBuildDate><%= Time.now.rfc822 %></lastBuildDate>
     <% items.each do |item| %>
     <item>

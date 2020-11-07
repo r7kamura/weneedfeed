@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Add channel description.
+
 ### Changed
 
 - Surround channel title by CDATA.
+- Change channel children order.
 
 ## 0.2.0 - 2020-11-07
 
