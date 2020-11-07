@@ -27,13 +27,24 @@ gem install weneedfeed
 
 ## Usage
 
-Write schema:
+### Schema syntax
+
+Write weneedfeeed.yml.
 
 ```yaml
 pages:
-  example:
-    title: example name
-    url: http://example.com/
+  example1:
+    title: example site 1
+    url: http://example.com/1
+    xpath:
+      item: //li
+      item_description: .//p[3]
+      item_link: .//a/@href
+      item_time: .//time/@datetime
+      item_title: .//p[2]
+  example2:
+    title: example site 2
+    url: http://example.com/2
     xpath:
       item: //li
       item_description: .//p[3]
@@ -42,21 +53,36 @@ pages:
       item_title: .//p[2]
 ```
 
-And then call `Weneedfeed::Capture`:
+### Build
 
-```ruby
-require 'weneedfeed'
+Run `weneedfeed build` to build static files for feeds.
 
-Weneedfeed::Capture.call(
-  base_url: 'https://user.github.io/repo',
-  schema_path: 'schema.yml'
-)
+```
+Usage:
+  weneedfeed build --base-url=BASE_URL
+
+Options:
+  --base-url=BASE_URL          # Base URL where to locate built files. (e.g. `"https://user.github.io/repo"`)
+  [--schema-path=SCHEMA_PATH]  # Path to weneedfeed YAML schema file.
+                               # Default: weneedfeed.yml
+
+Build static files.
 ```
 
-These files will be generated:
+### Server
 
-- output/index.html
-- output/feeds/example.xml
+Run `weneedfeed server` to run HTTP server.
+
+```
+Usage:
+  weneedfeed server
+
+Options:
+  [--schema-path=SCHEMA_PATH]  # Path to weneedfeed YAML schema file.
+                               # Default: weneedfeed.yml
+
+Run HTTP server.
+```
 
 ## Development
 
