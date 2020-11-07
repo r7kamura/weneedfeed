@@ -8,6 +8,24 @@ module Weneedfeed
         super(**argv)
         @pages = pages
       end
+
+      private
+
+      # @return [String]
+      def base_path
+        request.path.delete_suffix(router.path(:top_page))
+      end
+
+      # @param [String] page_name
+      # @return [String]
+      def feed_path(page_name:)
+        "#{base_path}#{router.path(:feed, page_name: page_name)}"
+      end
+
+      # @return [Hanami::Router]
+      def router
+        ::Weneedfeed::Application.router
+      end
     end
   end
 end
