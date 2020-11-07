@@ -5,8 +5,8 @@ require 'hibana'
 module Weneedfeed
   class Application < ::Hibana::Application
     route do
-      get '/', to: ::Weneedfeed::Controllers::ShowTopPage
-      get '/feeds/:page_name.xml', to: ::Weneedfeed::Controllers::ShowFeed
+      get '/', to: ::Weneedfeed::Controllers::ShowTopPage, as: :top_page
+      get '/feeds/:page_name.xml', to: ::Weneedfeed::Controllers::ShowFeed, as: :feed
     end
 
     # @param [Hash] schema

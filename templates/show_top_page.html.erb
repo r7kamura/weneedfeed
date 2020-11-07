@@ -9,7 +9,7 @@
     <ul>
       <% @pages.each do |page_name, hash| %>
       <li>
-        <a href="/feeds/<%= page_name %>"><%= hash['title'] %></a>
+        <a href="<%= feed_path(page_name: page_name) %>"><%= hash['title'] %></a>
       </li>
       <% end %>
     </ul>

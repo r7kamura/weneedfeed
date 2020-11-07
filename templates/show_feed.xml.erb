@@ -4,8 +4,8 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <description></description>
-    <link><%= "#{request.base_url}#{request.script_name}" %></link>
-    <atom:link href="<%= request.base_url %>/feeds/<%= page_name %>" rel="self"/>
+    <link><%= "#{request.base_url}#{request.path}" %></link>
+    <atom:link href="<%= "#{request.base_url}#{request.path}" %>" rel="self"/>
     <title><%= @page.title %></title>
     <lastBuildDate><%= Time.now.rfc822 %></lastBuildDate>
     <% items.each do |item| %>
