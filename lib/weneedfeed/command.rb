@@ -16,7 +16,7 @@ module Weneedfeed
 
     desc(
       'build',
-      'Build static files for feeds.'
+      'Build static files.'
     )
 
     method_option(

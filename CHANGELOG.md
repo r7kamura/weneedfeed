@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Change `weneedfeed build` description.
 - Change `weneedfeed server` description.
 
 ## 0.3.0 - 2020-11-08
