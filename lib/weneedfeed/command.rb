@@ -44,7 +44,7 @@ module Weneedfeed
 
     desc(
       'server',
-      'Run HTTP server'
+      'Run HTTP server.'
     )
 
     method_option(
