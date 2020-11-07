@@ -27,7 +27,7 @@ gem install weneedfeed
 
 ## Usage
 
-### Schema syntax
+### Schema
 
 Write weneedfeed.yml.
 
@@ -55,7 +55,7 @@ pages:
 
 ### Build
 
-Run `weneedfeed build` to build static files for feeds.
+Run `weneedfeed build` to build static files.
 
 ```
 Usage:
@@ -83,6 +83,11 @@ Options:
 
 Run HTTP server.
 ```
+
+## GitHub Actions Integration
+
+Use [weneedfeed-action](https://github.com/r7kamura/weneedfeed-action) for invoking weneedfeed on GitHub Actions.
+This makes it easy to generate feeds and publish them to GitHub Pages.
 
 ## Development
 
