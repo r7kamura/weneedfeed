@@ -29,7 +29,7 @@ gem install weneedfeed
 
 ### Schema syntax
 
-Write weneedfeeed.yml.
+Write weneedfeed.yml.
 
 ```yaml
 pages:
