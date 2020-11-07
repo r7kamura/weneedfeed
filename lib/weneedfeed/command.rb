@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require 'rack'
 require 'thor'
+require 'yaml'
 
 module Weneedfeed
   class Command < ::Thor
@@ -38,6 +40,24 @@ module Weneedfeed
         base_url: options[:base_url],
         schema_path: options[:schema_path]
       )
+    end
+
+    desc(
+      'server',
+      'Run HTTP server'
+    )
+
+    method_option(
+      :schema_path,
+      default: 'weneedfeed.yml',
+      desc: 'Path to weneedfeed YAML schema file.',
+      type: :string
+    )
+
+    def server
+      schema = ::YAML.load_file(options[:schema_path])
+      application = Weneedfeed::Application.new(schema: schema)
+      ::Rack::Handler.default.run(application)
     end
   end
 end
