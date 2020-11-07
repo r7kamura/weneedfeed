@@ -87,7 +87,6 @@ Run HTTP server.
 ## GitHub Actions Integration
 
 Use [weneedfeed-action](https://github.com/r7kamura/weneedfeed-action) for invoking weneedfeed on GitHub Actions.
-This makes it easy to generate feeds and publish them to GitHub Pages.
 
 ## Development
 
