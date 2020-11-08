@@ -55,7 +55,7 @@ module Weneedfeed
       self.class.parse_time(time_string)
     end
 
-    # @return [String, nil]
+    # @return [String]
     def title
       @node.at(@title_selector).inner_text
     end
