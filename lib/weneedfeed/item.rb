@@ -39,7 +39,7 @@ module Weneedfeed
 
     # @return [String, nil]
     def description
-      @node.at(@description_selector).inner_html
+      @node.at(@description_selector)&.inner_html
     end
 
     # @return [String]
