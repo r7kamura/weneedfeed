@@ -62,9 +62,17 @@ module Weneedfeed
 
     private
 
+    # @return [Nokogiri::Node, nil]
+    def time_node
+      @node.at(@time_selector)
+    end
+
     # @return [String]
     def time_string
-      @node.at(@time_selector).inner_html
+      node = time_node
+      return unless node
+
+      node['datetime'] || node.inner_html
     end
   end
 end
