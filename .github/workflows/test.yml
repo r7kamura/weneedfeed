@@ -15,7 +15,8 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 2.7.2
-      - run: bundle exec rubocop --color --parallel
+      - uses: r7kamura/rubocop-problem-matchers-action@v1
+      - run: bundle exec rubocop --parallel
       - run: bundle exec rspec --force-color
 
 
