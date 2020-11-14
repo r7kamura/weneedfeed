@@ -5,16 +5,18 @@ on:
   push:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7.2'
-      - run: bundle install --jobs=$(($(nproc) - 1)) --retry=3
-      - run: bundle exec rubocop --color --parallel
+          bundler-cache: true
+          ruby-version: 2.7.2
+      - uses: r7kamura/rubocop-problem-matchers-action@v1
+      - run: bundle exec rubocop --parallel
       - run: bundle exec rspec --force-color
 
 
