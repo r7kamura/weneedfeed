@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    weneedfeed (0.4.1)
+    weneedfeed (0.5.0)
       faraday
       hibana
       nokogiri
