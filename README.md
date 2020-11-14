@@ -73,7 +73,7 @@ CSS or XPath selector to find element with datetime information in each item, us
 
 ### `item_title_selector`
 
-CSS or XPath selector to find element with title information in each item, used for `<pubDate>` in `<item>`.
+CSS or XPath selector to find element with title information in each item, used for `<title>` in `<item>`.
 
 ### `item_description_selector`
 
