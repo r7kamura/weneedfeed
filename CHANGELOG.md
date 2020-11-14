@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add datetime attribute support on time element.
 
+### Changed
+
+- Change schema format about selectors.
+
 ## 0.4.1 - 2020-11-08
 
 ### Fixed

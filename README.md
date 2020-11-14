@@ -25,33 +25,61 @@ Or install it yourself as:
 gem install weneedfeed
 ```
 
-## Usage
+## Schema
 
-### Schema
+You need to write a schema file named with `weneedfeed.yml` to use this gem.
 
-Write `weneedfeed.yml`.
+### Example
 
 ```yaml
 pages:
   example1:
     title: example site 1
     url: http://example.com/1
-    selectors:
-      item: li
-      item_description: p:nth-child(3)
-      item_link: a
-      item_time: time[datetime]
-      item_title: p:nth-child(2)
+    item_selector: li
+    item_description_selector: p:nth-child(3)
+    item_link_selector: a
+    item_time_selector: time[datetime]
+    item_title_selector: p:nth-child(2)
   example2:
     title: example site 2
     url: http://example.com/2
-    selectors:
-      item: //li
-      item_description: .//p[3]
-      item_link: .//a/@href
-      item_time: .//time/@datetime
-      item_title: .//p[2]
+    item_selector: //li
+    item_description_selector: .//p[3]
+    item_link_selector: .//a/@href
+    item_time_selector: .//time/@datetime
+    item_title_selector: .//p[2]
 ```
+
+### `title`
+
+Feed title, used for RSS `<title>` element in `<channel>` element.
+
+### `url`
+
+URL to fetch HTML page for building feed.
+
+### `item_selector`
+
+CSS or XPath selector to search each item, equivalent unit to RSS `<item>` element.
+
+### `item_link_selector`
+
+CSS or XPath selector to find `<a>` element in each item, used for `<link>` in `<item>`.
+
+### `item_time_selector`
+
+CSS or XPath selector to find element with datetime information in each item, used for `<pubDate>` in `<item>`. Its `datetime` attribute or its inner HTML is used to calculate datetime.
+
+### `item_title_selector`
+
+CSS or XPath selector to find element with title information in each item, used for `<pubDate>` in `<item>`.
+
+### `item_description_selector`
+
+CSS or XPath selector to find element with description information in each item, used for `<description>` in `<item>`.
+
+## Usage
 
 ### Build
 
