@@ -39,7 +39,7 @@ pages:
     item_selector: li
     item_description_selector: p:nth-child(3)
     item_link_selector: a
-    item_time_selector: time[datetime]
+    item_time_selector: time
     item_title_selector: p:nth-child(2)
   example2:
     title: example site 2
@@ -47,7 +47,7 @@ pages:
     item_selector: //li
     item_description_selector: .//p[3]
     item_link_selector: .//a/@href
-    item_time_selector: .//time/@datetime
+    item_time_selector: .//time
     item_title_selector: .//p[2]
 ```
 
