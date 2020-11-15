@@ -15,8 +15,8 @@ module Weneedfeed
       end
     end
 
-    # @param [String] description_selector
-    # @param [String] link_selector
+    # @param [String, nil] description_selector
+    # @param [String, nil] link_selector
     # @param [Nokogiri::Node] node
     # @param [String] time_selector
     # @param [String] title_selector
@@ -39,6 +39,8 @@ module Weneedfeed
 
     # @return [String, nil]
     def description
+      return unless @description_selector
+
       @node.at(@description_selector)&.inner_html
     end
 
@@ -52,6 +54,8 @@ module Weneedfeed
 
     # @return [Time, nil]
     def time
+      return unless @time_selector
+
       string = time_string
       return unless string
 
