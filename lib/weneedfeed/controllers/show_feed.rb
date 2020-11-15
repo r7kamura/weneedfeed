@@ -5,24 +5,24 @@ module Weneedfeed
     class ShowFeed < ::Hibana::Controller
       def call
         env = request.env
-        page_name = env.dig(
+        page_id = env.dig(
           'router.params',
-          :page_name
+          :page_id
         )
-        properties = env['weneedfeed.schema'].find_page_properties(page_name)
-        unless properties
+        page_schema = env['weneedfeed.schema'].find_page_schema(page_id)
+        unless page_schema
           response.status = 404
           return
         end
 
         scraping = ::Weneedfeed::Scraping.new(
-          item_description_selector: properties['item_description_selector'],
-          item_link_selector: properties['item_link_selector'],
-          item_time_selector: properties['item_time_selector'],
-          item_title_selector: properties['item_title_selector'],
-          item_selector: properties['item_selector'],
-          title: properties['title'],
-          url: properties['url']
+          item_description_selector: page_schema.item_description_selector,
+          item_link_selector: page_schema.item_link_selector,
+          item_time_selector: page_schema.item_time_selector,
+          item_title_selector: page_schema.item_title_selector,
+          item_selector: page_schema.item_selector,
+          title: page_schema.title,
+          url: page_schema.url,
         )
         page = scraping.call
 
