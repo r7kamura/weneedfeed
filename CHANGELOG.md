@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Require hibana 0.2 or later.
+
+### Fixed
+
+- Fix installation error caused by hanami-router version restriction.
+
+### Removed
+
+- Remove direct dependency on hanami-router.
+
 ## 0.6.0 - 2020-11-15
 
 ### Changed
