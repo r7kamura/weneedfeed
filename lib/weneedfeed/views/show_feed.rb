@@ -3,6 +3,8 @@
 module Weneedfeed
   module Views
     class ShowFeed < ::Hibana::View
+      include ::Weneedfeed::Helpers::Parameters
+
       # @param [Weneedfeed::Page] page
       def initialize(page:, **argv)
         super(**argv)
@@ -25,7 +27,7 @@ module Weneedfeed
 
       # @return [String]
       def page_id
-        request.env['router.params'][:page_id]
+        path_parameters[:page_id]
       end
 
       # @return [Hanami::Router]

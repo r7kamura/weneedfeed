@@ -2,14 +2,10 @@
 
 module Weneedfeed
   module Controllers
-    class ShowFeed < ::Hibana::Controller
+    class ShowFeed < ::Weneedfeed::Controllers::Base
       def call
         env = request.env
-        page_id = env.dig(
-          'router.params',
-          :page_id
-        )
-        page_schema = env['weneedfeed.schema'].find_page_schema(page_id)
+        page_schema = env['weneedfeed.schema'].find_page_schema(path_parameters[:page_id])
         unless page_schema
           response.status = 404
           return

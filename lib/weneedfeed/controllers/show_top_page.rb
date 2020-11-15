@@ -2,7 +2,7 @@
 
 module Weneedfeed
   module Controllers
-    class ShowTopPage < ::Hibana::Controller
+    class ShowTopPage < ::Weneedfeed::Controllers::Base
       def call
         page_schemata = request.env['weneedfeed.schema'].page_schemata.sort_by(&:title)
         response.content_type = 'text/html'
