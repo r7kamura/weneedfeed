@@ -53,35 +53,59 @@ pages:
 
 ### `id`
 
-Feed ID, used for feed URL.
+Feed ID.
+
+- required
+- Used for feed URL.
 
 ### `title`
 
-Feed title, used for RSS `<title>` element in `<channel>` element.
+Feed title.
+
+- required
+- Used for RSS `<title>` element in `<channel>` element.
 
 ### `url`
 
-URL to fetch HTML page for building feed.
+HTML source URL.
+
+- required
+- Used to fetch HTML page for building feed.
 
 ### `item_selector`
 
-CSS or XPath selector to search each item, equivalent unit to RSS `<item>` element.
+CSS or XPath selector to search each item.
+
+- required
+- Equivalent unit to RSS `<item>` element.
 
 ### `item_link_selector`
 
-CSS or XPath selector to find `<a>` element in each item, used for `<link>` in `<item>`.
+CSS or XPath selector to find `<a>` element in each item.
 
-### `item_time_selector`
-
-CSS or XPath selector to find element with datetime information in each item, used for `<pubDate>` in `<item>`. Its `datetime` attribute or its inner HTML is used to calculate datetime.
+- required
+- Used for `<link>` in `<item>`.
 
 ### `item_title_selector`
 
-CSS or XPath selector to find element with title information in each item, used for `<title>` in `<item>`.
+CSS or XPath selector to find element with title information in each item.
+
+- required
+- Used for `<title>` in `<item>`.
 
 ### `item_description_selector`
 
-CSS or XPath selector to find element with description information in each item, used for `<description>` in `<item>`.
+CSS or XPath selector to find element with description information in each item.
+
+- optional
+- Used for `<description>` in `<item>`.
+
+### `item_time_selector`
+
+CSS or XPath selector to find element with datetime information in each item.
+
+- optional
+- Used for `<pubDate>` in `<item>`. Its `datetime` attribute or its inner HTML is used to calculate datetime.
 
 ## Usage
 

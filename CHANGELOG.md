@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change pages schema from Hash to Array.
 - Require hanami-router 2.0.0.alpha3 or later versions.
 - Ignore pubDate when item.time is not found.
+- Make some item_description_selector and item_time_selector optional.
 
 ## 0.5.0 - 2020-11-14
 

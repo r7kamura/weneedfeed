@@ -5,9 +5,9 @@ require 'nokogiri'
 
 module Weneedfeed
   class Scraping
-    # @param [String] item_description_selector
+    # @param [String, nil] item_description_selector
     # @param [String] item_link_selector
-    # @param [String] item_time_selector
+    # @param [String, nil] item_time_selector
     # @param [String] item_title_selector
     # @param [String] item_selector
     # @param [String] title
