@@ -52,7 +52,10 @@ module Weneedfeed
 
     # @return [Time, nil]
     def time
-      self.class.parse_time(time_string)
+      string = time_string
+      return unless string
+
+      self.class.parse_time(string)
     end
 
     # @return [String]
@@ -67,7 +70,7 @@ module Weneedfeed
       @node.at(@time_selector)
     end
 
-    # @return [String]
+    # @return [String, nil]
     def time_string
       node = time_node
       return unless node
