@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.6.0 - 2020-11-15
+
 ### Changed
 
 - Change pages schema from Hash to Array.
