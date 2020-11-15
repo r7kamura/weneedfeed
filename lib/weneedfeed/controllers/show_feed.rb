@@ -9,11 +9,7 @@ module Weneedfeed
           'router.params',
           :page_name
         )
-        properties = env.dig(
-          'weneedfeed.schema',
-          'pages',
-          page_name
-        )
+        properties = env['weneedfeed.schema'].find_page_properties(page_name)
         unless properties
           response.status = 404
           return

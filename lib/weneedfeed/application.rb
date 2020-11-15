@@ -11,7 +11,7 @@ module Weneedfeed
 
     # @param [Hash] schema
     def initialize(schema:)
-      @schema = schema
+      @schema = ::Weneedfeed::Schema.new(schema)
       super()
     end
 
@@ -23,7 +23,7 @@ module Weneedfeed
 
     # @return [Array<String>]
     def paths
-      ['/'] + @schema['pages'].keys.map do |page_name|
+      ['/'] + @schema.page_names.map do |page_name|
         "/feeds/#{page_name}.xml"
       end
     end
