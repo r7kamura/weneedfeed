@@ -4,10 +4,7 @@ module Weneedfeed
   module Controllers
     class ShowTopPage < ::Hibana::Controller
       def call
-        pages = request.env.dig(
-          'weneedfeed.schema',
-          'pages'
-        ).sort_by do |_key, value|
+        pages = request.env['weneedfeed.schema'].pages.sort_by do |_key, value|
           value['title']
         end
         response.content_type = 'text/html'
