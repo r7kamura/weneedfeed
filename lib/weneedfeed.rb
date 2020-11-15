@@ -9,6 +9,7 @@ module Weneedfeed
   autoload :Controllers, 'weneedfeed/controllers'
   autoload :Item, 'weneedfeed/item'
   autoload :Page, 'weneedfeed/page'
+  autoload :PageSchema, 'weneedfeed/page_schema'
   autoload :Schema, 'weneedfeed/schema'
   autoload :Scraping, 'weneedfeed/scraping'
   autoload :Views, 'weneedfeed/views'

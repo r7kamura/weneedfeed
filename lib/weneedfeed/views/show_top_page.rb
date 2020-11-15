@@ -3,10 +3,10 @@
 module Weneedfeed
   module Views
     class ShowTopPage < ::Hibana::View
-      # @param [Array<Weneedfeed::Page>] pages
-      def initialize(pages:, **argv)
+      # @param [Array<Hash>] page_schemata
+      def initialize(page_schemata:, **argv)
         super(**argv)
-        @pages = pages
+        @page_schemata = page_schemata
       end
 
       private
@@ -16,10 +16,10 @@ module Weneedfeed
         request.path.delete_suffix(router.path(:top_page))
       end
 
-      # @param [String] page_name
+      # @param [String] page_id
       # @return [String]
-      def feed_path(page_name:)
-        "#{base_path}#{router.path(:feed, page_name: page_name)}"
+      def feed_path(page_id:)
+        "#{base_path}#{router.path(:feed, page_id: page_id)}"
       end
 
       # @return [Hanami::Router]

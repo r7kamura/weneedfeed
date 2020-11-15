@@ -13,7 +13,7 @@ module Weneedfeed
 
       # @return [String]
       def top_page_path
-        request.path.delete_suffix(router.path(:feed, page_name: page_name))
+        request.path.delete_suffix(router.path(:feed, page_id: page_id))
       end
 
       # @return [Enumerable<Weneedfeed::Item>]
@@ -24,8 +24,8 @@ module Weneedfeed
       end
 
       # @return [String]
-      def page_name
-        request.env['router.params'][:page_name]
+      def page_id
+        request.env['router.params'][:page_id]
       end
 
       # @return [Hanami::Router]

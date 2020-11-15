@@ -1,5 +1,5 @@
 pages:
-  example_css:
+  - id: example_css
     title: example name
     url: http://example.com/
     item_selector: li
@@ -7,7 +7,7 @@ pages:
     item_link_selector: a
     item_time_selector: time[datetime]
     item_title_selector: p:nth-child(2)
-  example_xpath:
+  - id: example_xpath
     title: example name
     url: http://example.com/
     item_selector: //li

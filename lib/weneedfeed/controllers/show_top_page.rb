@@ -4,13 +4,11 @@ module Weneedfeed
   module Controllers
     class ShowTopPage < ::Hibana::Controller
       def call
-        pages = request.env['weneedfeed.schema'].pages.sort_by do |_key, value|
-          value['title']
-        end
+        page_schemata = request.env['weneedfeed.schema'].page_schemata.sort_by(&:title)
         response.content_type = 'text/html'
         response.write(
           ::Weneedfeed::Views::ShowTopPage.new(
-            pages: pages,
+            page_schemata: page_schemata,
             partial_template_path: ::File.expand_path(
               'templates/show_top_page.html.erb',
               "#{__dir__}/../../.."

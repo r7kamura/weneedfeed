@@ -9,3 +9,6 @@ Metrics:
 
 Style/Documentation:
   Enabled: false
+
+Style/TrailingCommaInArguments:
+  Enabled: false

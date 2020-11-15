@@ -10,7 +10,7 @@ RSpec.describe Weneedfeed::Scraping do
   end
 
   let(:properties) do
-    YAML.load_file('spec/fixtures/example.yml')['pages']['example_xpath']
+    YAML.load_file('spec/fixtures/example.yml')['pages'].first
   end
 
   let(:scraping) do

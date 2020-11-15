@@ -33,7 +33,7 @@ You need to write a schema file named with `weneedfeed.yml` to use this gem.
 
 ```yaml
 pages:
-  example1:
+  - id: example1
     title: example site 1
     url: http://example.com/1
     item_selector: li
@@ -41,7 +41,7 @@ pages:
     item_link_selector: a
     item_time_selector: time
     item_title_selector: p:nth-child(2)
-  example2:
+  - id: example2
     title: example site 2
     url: http://example.com/2
     item_selector: //li
@@ -50,6 +50,10 @@ pages:
     item_time_selector: .//time
     item_title_selector: .//p[2]
 ```
+
+### `id`
+
+Feed ID, used for feed URL.
 
 ### `title`
 
