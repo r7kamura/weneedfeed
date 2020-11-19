@@ -18,5 +18,3 @@ jobs:
       - uses: r7kamura/rubocop-problem-matchers-action@v1
       - run: bundle exec rubocop --parallel
       - run: bundle exec rspec --force-color
-
-
