@@ -12,3 +12,6 @@ Style/Documentation:
 
 Style/TrailingCommaInArguments:
   Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
