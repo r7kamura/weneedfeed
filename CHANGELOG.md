@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Convert JSON response into XML.
+
+### Fixed
+
+- Fix bug that item_description_selector is not used.
+
 ## 0.6.1 - 2020-11-15
 
 ### Changed

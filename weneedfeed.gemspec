@@ -25,7 +25,10 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.add_runtime_dependency 'activesupport'
+  spec.add_runtime_dependency 'builder'
   spec.add_runtime_dependency 'faraday'
+  spec.add_runtime_dependency 'faraday_middleware'
   spec.add_runtime_dependency 'hibana', '>= 0.2'
   spec.add_runtime_dependency 'nokogiri'
   spec.add_runtime_dependency 'rack-capture', '>= 0.4.0'
