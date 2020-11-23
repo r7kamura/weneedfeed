@@ -5,6 +5,15 @@ require 'nokogiri'
 
 module Weneedfeed
   class Scraping
+    class << self
+      # @return [Faraday::Connection]
+      def faraday_connection
+        @faraday_connection ||= ::Faraday.new do |connection|
+          connection.use ::Weneedfeed::FaradayResponseMiddleware
+        end
+      end
+    end
+
     # @param [String, nil] item_description_selector
     # @param [String] item_link_selector
     # @param [String, nil] item_time_selector
@@ -48,12 +57,12 @@ module Weneedfeed
 
     # @return [Nokogiri::Node]
     def parsed_body
-      ::Nokogiri::HTML.parse(response.body)
+      ::Nokogiri::XML.parse(response.body)
     end
 
     # @return [Faraday::Response]
     def response
-      ::Faraday.get(@url)
+      self.class.faraday_connection.get(@url)
     end
   end
 end

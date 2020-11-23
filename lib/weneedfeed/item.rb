@@ -48,8 +48,19 @@ module Weneedfeed
     def link
       ::URI.join(
         @url,
-        @node.at(@link_selector)['href']
+        link_path_or_url
       ).to_s
+    end
+
+    # @return [Nokogiri::Node, nil]
+    def link_node
+      @node.at(@link_selector)
+    end
+
+    # @return [String, nil]
+    def link_path_or_url
+      node = link_node
+      node['href'] || node.inner_text
     end
 
     # @return [Time, nil]

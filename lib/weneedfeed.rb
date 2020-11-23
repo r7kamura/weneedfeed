@@ -7,6 +7,7 @@ module Weneedfeed
   autoload :Capture, 'weneedfeed/capture'
   autoload :Command, 'weneedfeed/command'
   autoload :Controllers, 'weneedfeed/controllers'
+  autoload :FaradayResponseMiddleware, 'weneedfeed/faraday_response_middleware'
   autoload :Helpers, 'weneedfeed/helpers'
   autoload :Item, 'weneedfeed/item'
   autoload :Page, 'weneedfeed/page'
