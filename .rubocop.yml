@@ -1,3 +1,6 @@
+require:
+  - rubocop-rspec
+
 AllCops:
   NewCops: enable
   TargetRubyVersion: 2.5
@@ -6,6 +9,15 @@ Lint/SuppressedException:
   Enabled: false
 
 Metrics:
+  Enabled: false
+
+RSpec/ImplicitSubject:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NamedSubject:
   Enabled: false
 
 Style/Documentation:
