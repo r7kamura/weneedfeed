@@ -24,6 +24,7 @@ module Weneedfeed
     def page_schemata
       @raw['pages'].map do |hash|
         ::Weneedfeed::PageSchema.new(
+          description: hash['description'],
           id: hash['id'],
           item_description_selector: hash['item_description_selector'],
           item_link_selector: hash['item_link_selector'],

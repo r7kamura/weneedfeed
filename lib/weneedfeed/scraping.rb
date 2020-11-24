@@ -14,6 +14,7 @@ module Weneedfeed
       end
     end
 
+    # @param [String, nil] description
     # @param [String, nil] item_description_selector
     # @param [String] item_link_selector
     # @param [String, nil] item_time_selector
@@ -22,6 +23,7 @@ module Weneedfeed
     # @param [String] title
     # @param [String] url
     def initialize(
+      description:,
       item_description_selector:,
       item_link_selector:,
       item_time_selector:,
@@ -30,6 +32,7 @@ module Weneedfeed
       title:,
       url:
     )
+      @description = description
       @item_description_selector = item_description_selector
       @item_link_selector = item_link_selector
       @item_time_selector = item_time_selector
@@ -42,6 +45,7 @@ module Weneedfeed
     # @return [Weneedfeed::Page]
     def call
       ::Weneedfeed::Page.new(
+        description: @description,
         node: parsed_body,
         item_description_selector: @item_description_selector,
         item_selector: @item_selector,

@@ -2,6 +2,7 @@
 
 module Weneedfeed
   PageSchema = Struct.new(
+    :description,
     :id,
     :item_description_selector,
     :item_link_selector,

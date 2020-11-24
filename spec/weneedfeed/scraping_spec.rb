@@ -15,6 +15,7 @@ RSpec.describe Weneedfeed::Scraping do
 
   let(:scraping) do
     described_class.new(
+      description: properties['description'],
       item_description_selector: properties['item_description_selector'],
       item_link_selector: properties['item_link_selector'],
       item_time_selector: properties['item_time_selector'],

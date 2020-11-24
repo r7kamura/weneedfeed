@@ -1,6 +1,7 @@
 pages:
   - id: example_css
     title: example name
+    description: An example of CSS selectors.
     url: http://example.com/
     item_selector: li
     item_description_selector: p:nth-child(3)

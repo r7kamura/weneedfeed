@@ -34,7 +34,8 @@ You need to write a schema file named with `weneedfeed.yml` to use this gem.
 ```yaml
 pages:
   - id: example1
-    title: Example feed with CSS Selector
+    title: Example 1
+    description: Example feed with CSS Selector
     url: http://example.com/1
     item_selector: li
     item_description_selector: p:nth-child(3)
@@ -42,7 +43,8 @@ pages:
     item_time_selector: time
     item_title_selector: p:nth-child(2)
   - id: example2
-    title: Example feed with XPath
+    title: Example 2
+    description: Example feed with XPath
     url: http://example.com/2
     item_selector: //li
     item_description_selector: .//p[3]
@@ -64,6 +66,13 @@ Feed title.
 
 - required
 - Used for RSS `<title>` element in `<channel>` element.
+
+### `description`
+
+Feed description.
+
+- optional
+- Used for RSS `<description>` element in `<channel>` element.
 
 ### `url`
 

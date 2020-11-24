@@ -2,12 +2,16 @@
 
 module Weneedfeed
   class Page
+    # @return [String, nil]
+    attr_reader :description
+
     # @return [String]
     attr_reader :title
 
     # @return [String]
     attr_reader :url
 
+    # @param [String, nil] description
     # @param [String, nil] item_description_selector
     # @param [String] item_link_selector
     # @param [String, nil] item_time_selector
@@ -17,6 +21,7 @@ module Weneedfeed
     # @param [String] title
     # @param [String] url
     def initialize(
+      description:,
       item_description_selector:,
       item_link_selector:,
       item_time_selector:,
@@ -26,6 +31,7 @@ module Weneedfeed
       title:,
       url:
     )
+      @description = description
       @item_description_selector = item_description_selector
       @item_link_selector = item_link_selector
       @item_time_selector = item_time_selector

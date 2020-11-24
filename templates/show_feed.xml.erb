@@ -6,7 +6,7 @@
     <title><![CDATA[<%= @page.title %>]]></title>
     <link><%= "#{@page.url}" %></link>
     <atom:link href="<%= "#{request.base_url}#{request.path}" %>" rel="self"/>
-    <description><![CDATA[Recent content on <%= @page.title %>]]></description>
+    <description><![CDATA[<%= @page.description %>]]></description>
     <lastBuildDate><%= Time.now.rfc822 %></lastBuildDate>
     <% items.each do |item| %>
     <item>
