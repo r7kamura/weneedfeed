@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+
+- Fix error when no title element found.
+
 ## 0.7.0 - 2020-11-23
 
 ### Added
