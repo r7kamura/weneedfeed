@@ -4,7 +4,7 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title><![CDATA[<%= @page.title %>]]></title>
-    <link><%= "#{request.base_url}#{top_page_path}" %></link>
+    <link><%= "#{@page.url}" %></link>
     <atom:link href="<%= "#{request.base_url}#{request.path}" %>" rel="self"/>
     <description><![CDATA[Recent content on <%= @page.title %>]]></description>
     <lastBuildDate><%= Time.now.rfc822 %></lastBuildDate>

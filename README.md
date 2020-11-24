@@ -56,7 +56,7 @@ pages:
 Feed ID.
 
 - required
-- Used for feed URL.
+- Used for feed URL and `<link>` element in `<channel>` element.
 
 ### `title`
 
