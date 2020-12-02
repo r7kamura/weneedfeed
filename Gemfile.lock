@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    weneedfeed (0.9.1)
+    weneedfeed (0.9.2)
       activesupport
       builder
       faraday
