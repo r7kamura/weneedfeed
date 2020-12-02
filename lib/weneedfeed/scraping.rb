@@ -65,12 +65,16 @@ module Weneedfeed
 
     # @return [Nokogiri::Node]
     def parsed_body
-      ::Nokogiri::XML.parse(response.body)
+      if response.headers['Content-Type']&.include?('application/json')
+        ::Nokogiri::XML.parse(response.body)
+      else
+        ::Nokogiri::HTML.parse(response.body)
+      end
     end
 
     # @return [Faraday::Response]
     def response
-      self.class.faraday_connection.get(@url)
+      @response ||= self.class.faraday_connection.get(@url)
     end
   end
 end

@@ -19,7 +19,7 @@
       <content:encoded><![CDATA[<%= item.description %>]]></content:encoded>
       <guid isPermaLink="true"><%= item.link %></guid>
       <% if item.image_url %>
-        <enclosure url="<%= item.image_url %>" length="0" type="<%= item.image_mime_type %>"/>
+        <enclosure url=<%= item.image_url.encode(xml: :attr) %> length="0" type="<%= item.image_mime_type %>"/>
       <% end %>
     </item>
     <% end %>

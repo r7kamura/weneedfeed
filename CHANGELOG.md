@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+
+- Fix escape bug in escaping HTML and generating XML.
+
 ## 0.9.0 - 2020-12-03
 
 ### Added
