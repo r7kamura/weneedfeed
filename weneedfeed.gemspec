@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'faraday'
   spec.add_runtime_dependency 'faraday_middleware'
   spec.add_runtime_dependency 'hibana', '>= 0.2'
+  spec.add_runtime_dependency 'mimemagic'
   spec.add_runtime_dependency 'nokogiri'
   spec.add_runtime_dependency 'rack-capture', '>= 0.4.0'
   spec.add_runtime_dependency 'thor'

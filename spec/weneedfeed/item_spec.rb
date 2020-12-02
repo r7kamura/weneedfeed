@@ -6,6 +6,7 @@ RSpec.describe Weneedfeed::Item do
   let(:item) do
     described_class.new(
       description_selector: 'p:nth-child(3)',
+      image_selector: 'img',
       link_selector: 'a',
       node: node,
       time_selector: 'time',
@@ -23,7 +24,52 @@ RSpec.describe Weneedfeed::Item do
       <p><time datetime="2000-01-01T00:00:00+09:00">2000-01-01</time></p>
       <p><a href="/articles/01-01">Episode 1</a></p>
       <p>This is episode 1.</p>
+      <img src="/example1.jpg"/>
     HTML
+  end
+
+  describe '#image_mime_type' do
+    subject do
+      item.image_mime_type
+    end
+
+    context 'when img element is not found' do
+      let(:node_raw) do
+        ''
+      end
+
+      it 'returns nil' do
+        is_expected.to eq(nil)
+      end
+    end
+
+    context 'when img element is found' do
+      it 'returns its MIME type' do
+        is_expected.to eq('image/jpeg')
+      end
+    end
+  end
+
+  describe '#image_url' do
+    subject do
+      item.image_url
+    end
+
+    context 'when img element is not found' do
+      let(:node_raw) do
+        ''
+      end
+
+      it 'returns nil' do
+        is_expected.to eq(nil)
+      end
+    end
+
+    context 'when img element is found' do
+      it 'returns its src' do
+        is_expected.to eq('http://example.com/example1.jpg')
+      end
+    end
   end
 
   describe '#time' do

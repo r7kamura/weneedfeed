@@ -13,6 +13,7 @@ module Weneedfeed
 
     # @param [String, nil] description
     # @param [String, nil] item_description_selector
+    # @param [String, nil] item_image_selector
     # @param [String] item_link_selector
     # @param [String, nil] item_time_selector
     # @param [String] item_title_selector
@@ -23,6 +24,7 @@ module Weneedfeed
     def initialize(
       description:,
       item_description_selector:,
+      item_image_selector:,
       item_link_selector:,
       item_time_selector:,
       item_title_selector:,
@@ -33,6 +35,7 @@ module Weneedfeed
     )
       @description = description
       @item_description_selector = item_description_selector
+      @item_image_selector = item_image_selector
       @item_link_selector = item_link_selector
       @item_time_selector = item_time_selector
       @item_title_selector = item_title_selector
@@ -47,6 +50,7 @@ module Weneedfeed
       @node.search(@item_selector).map do |node|
         ::Weneedfeed::Item.new(
           description_selector: @item_description_selector,
+          image_selector: @item_image_selector,
           link_selector: @item_link_selector,
           node: node,
           time_selector: @item_time_selector,
