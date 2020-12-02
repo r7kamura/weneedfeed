@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fix item image URL on JSON source.
+- Fix item image MIME type detection.
 
 ## 0.9.1 - 2020-12-03
 

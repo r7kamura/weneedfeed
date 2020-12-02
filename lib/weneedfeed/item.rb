@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'mimemagic'
+require 'uri'
 
 module Weneedfeed
   class Item
@@ -53,7 +54,8 @@ module Weneedfeed
     def image_mime_type
       return unless image_url
 
-      ::MimeMagic.by_path(image_url)&.type
+      uri = ::URI.parse(image_url)
+      ::MimeMagic.by_path(uri.path)&.type
     end
 
     # @return [String, nil]
