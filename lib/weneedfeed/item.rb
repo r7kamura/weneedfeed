@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'mimemagic'
+
 module Weneedfeed
   class Item
     class << self
@@ -16,6 +18,7 @@ module Weneedfeed
     end
 
     # @param [String, nil] description_selector
+    # @param [String, nil] image_selector
     # @param [String, nil] link_selector
     # @param [Nokogiri::Node] node
     # @param [String] time_selector
@@ -23,6 +26,7 @@ module Weneedfeed
     # @param [String] url
     def initialize(
       description_selector:,
+      image_selector:,
       link_selector:,
       node:,
       time_selector:,
@@ -30,6 +34,7 @@ module Weneedfeed
       url:
     )
       @description_selector = description_selector
+      @image_selector = image_selector
       @link_selector = link_selector
       @node = node
       @time_selector = time_selector
@@ -42,6 +47,29 @@ module Weneedfeed
       return unless @description_selector
 
       @node.at(@description_selector)&.inner_html
+    end
+
+    # @return [String, nil]
+    def image_mime_type
+      return unless image_url
+
+      ::MimeMagic.by_path(image_url)&.type
+    end
+
+    # @return [String, nil]
+    def image_path_or_url
+      return unless @image_selector
+
+      @node.at(@image_selector)&.[]('src')
+    end
+
+    def image_url
+      return unless image_path_or_url
+
+      ::URI.join(
+        @url,
+        image_path_or_url
+      ).to_s
     end
 
     # @return [String]

@@ -13,6 +13,7 @@ module Weneedfeed
         scraping = ::Weneedfeed::Scraping.new(
           description: page_schema.description,
           item_description_selector: page_schema.item_description_selector,
+          item_image_selector: page_schema.item_image_selector,
           item_link_selector: page_schema.item_link_selector,
           item_time_selector: page_schema.item_time_selector,
           item_title_selector: page_schema.item_title_selector,

@@ -27,6 +27,7 @@ module Weneedfeed
           description: hash['description'],
           id: hash['id'],
           item_description_selector: hash['item_description_selector'],
+          item_image_selector: hash['item_image_selector'],
           item_link_selector: hash['item_link_selector'],
           item_time_selector: hash['item_time_selector'],
           item_title_selector: hash['item_title_selector'],

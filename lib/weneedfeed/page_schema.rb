@@ -5,6 +5,7 @@ module Weneedfeed
     :description,
     :id,
     :item_description_selector,
+    :item_image_selector,
     :item_link_selector,
     :item_time_selector,
     :item_title_selector,

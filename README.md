@@ -39,6 +39,7 @@ pages:
     url: http://example.com/1
     item_selector: li
     item_description_selector: p:nth-child(3)
+    item_image_selector: img
     item_link_selector: a
     item_time_selector: time
     item_title_selector: p:nth-child(2)
@@ -47,6 +48,7 @@ pages:
     description: Example feed with XPath
     url: http://example.com/2
     item_selector: //li
+    item_image_selector: .//img
     item_description_selector: .//p[3]
     item_link_selector: .//a
     item_time_selector: .//time
@@ -108,6 +110,13 @@ CSS or XPath selector to find element with description information in each item.
 
 - optional
 - Used for `<description>` in `<item>`.
+
+### `item_image_selector`
+
+CSS or XPath selector to find `<img>`element in each item.
+
+- optional
+- Used for `<enclosure>` in `<item>`.
 
 ### `item_time_selector`
 
