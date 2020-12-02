@@ -60,7 +60,14 @@ module Weneedfeed
     def image_path_or_url
       return unless @image_selector
 
-      @node.at(@image_selector)&.[]('src')
+      node = @node.at(@image_selector)
+      return unless node
+
+      if node.name == 'img'
+        node['src']
+      else
+        node.content
+      end
     end
 
     def image_url
