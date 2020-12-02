@@ -27,7 +27,7 @@ gem install weneedfeed
 
 ## Schema
 
-You need to write a schema file named with `weneedfeed.yml` to use this gem.
+Weneedfeed requires `weneedfeed.yml` that describes URLs and selectors.
 
 ### Example
 
