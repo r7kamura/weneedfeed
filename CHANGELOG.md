@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Replace mimemagic with marcel.
 
+### Fixed
+
+- Fix error on activesupport 7.
+
 ## 0.9.2 - 2020-12-03
 
 ### Fixed
