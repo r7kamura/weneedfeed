@@ -39,7 +39,7 @@ RSpec.describe Weneedfeed::Item do
       end
 
       it 'returns nil' do
-        is_expected.to eq(nil)
+        is_expected.to be_nil
       end
     end
 
@@ -61,7 +61,7 @@ RSpec.describe Weneedfeed::Item do
       end
 
       it 'returns nil' do
-        is_expected.to eq(nil)
+        is_expected.to be_nil
       end
     end
 
