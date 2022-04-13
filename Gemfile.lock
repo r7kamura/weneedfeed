@@ -7,7 +7,7 @@ PATH
       faraday
       faraday_middleware
       hibana (>= 0.2)
-      mimemagic
+      marcel
       nokogiri
       rack-capture (>= 0.4.0)
       thor
@@ -45,9 +45,7 @@ GEM
       tilt
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    mimemagic (0.4.3)
-      nokogiri (~> 1)
-      rake
+    marcel (1.0.2)
     mini_portile2 (2.6.1)
     minitest (5.14.2)
     multipart-post (2.1.1)
