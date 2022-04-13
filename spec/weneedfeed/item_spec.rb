@@ -72,6 +72,28 @@ RSpec.describe Weneedfeed::Item do
     end
   end
 
+  describe '#link' do
+    subject do
+      item.link
+    end
+
+    context 'when link is not found' do
+      let(:node_raw) do
+        ''
+      end
+
+      it 'returns nil' do
+        is_expected.to be_nil
+      end
+    end
+
+    context 'when link is found' do
+      it 'returns absolute URL' do
+        is_expected.to eq('http://example.com/articles/01-01')
+      end
+    end
+  end
+
   describe '#time' do
     subject do
       item.time
