@@ -82,6 +82,8 @@ module Weneedfeed
 
     # @return [String]
     def link
+      return unless link_path_or_url
+
       ::URI.join(
         @url,
         link_path_or_url
@@ -96,6 +98,8 @@ module Weneedfeed
     # @return [String, nil]
     def link_path_or_url
       node = link_node
+      return unless node
+
       node['href'] || node.inner_text
     end
 
