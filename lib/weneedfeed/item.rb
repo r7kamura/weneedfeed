@@ -78,6 +78,8 @@ module Weneedfeed
         @url,
         image_path_or_url
       ).to_s
+    rescue ::URI::InvalidURIError
+      "#{@url}#{image_path_or_url}"
     end
 
     # @return [String]
@@ -88,6 +90,8 @@ module Weneedfeed
         @url,
         link_path_or_url
       ).to_s
+    rescue ::URI::InvalidURIError
+      "#{@url}#{link_path_or_url}"
     end
 
     # @return [Nokogiri::Node, nil]
