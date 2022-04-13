@@ -70,6 +70,16 @@ RSpec.describe Weneedfeed::Item do
         is_expected.to eq('http://example.com/example1.jpg')
       end
     end
+
+    context 'when img element URL has invalid format' do
+      let(:node_raw) do
+        '<img src="/a b.jpg"/>'
+      end
+
+      it 'returns invalid URL' do
+        is_expected.to eq('http://example.com/a b.jpg')
+      end
+    end
   end
 
   describe '#link' do
@@ -90,6 +100,16 @@ RSpec.describe Weneedfeed::Item do
     context 'when link is found' do
       it 'returns absolute URL' do
         is_expected.to eq('http://example.com/articles/01-01')
+      end
+    end
+
+    context 'when link URL has invalid format' do
+      let(:node_raw) do
+        '<a href="/a b">dummy</a>'
+      end
+
+      it 'returns invalid URL' do
+        is_expected.to eq('http://example.com/a b')
       end
     end
   end
