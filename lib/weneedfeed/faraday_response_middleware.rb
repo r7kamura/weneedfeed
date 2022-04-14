@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-# For faraday_middleware/response_middleware.
+# To load ActiveSupport::IsolatedExecutionState on activesupport 7.
 # https://github.com/r7kamura/weneedfeed/issues/19
 require 'active_support'
-require 'active_support/isolated_execution_state' if ActiveSupport.gem_version >= Gem::Version.new('7')
 
 require 'active_support/core_ext/array/conversions'
 require 'active_support/core_ext/hash/conversions'
