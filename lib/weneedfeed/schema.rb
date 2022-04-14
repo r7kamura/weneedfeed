@@ -8,7 +8,7 @@ module Weneedfeed
       # @param [String] schema_path
       # @return [Weneedfeed::Schema]
       def load_file(schema_path)
-        raw = ::YAML.load_file(schema_path)
+        raw = ::YAML.load_file(schema_path, aliases: true)
         new(raw)
       end
     end

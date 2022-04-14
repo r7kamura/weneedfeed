@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Support YAML aliases (on psych 4.x).
+
 ## 0.13.0 - 2022-04-14
 
 ### Changed
