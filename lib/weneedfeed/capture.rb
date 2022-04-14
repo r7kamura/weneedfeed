@@ -44,7 +44,7 @@ module Weneedfeed
     # @return [Weneedfeed::Application]
     def app
       @app ||= ::Weneedfeed::Application.new(
-        schema: ::YAML.load_file(@schema_path)
+        schema_path: @schema_path
       )
     end
 

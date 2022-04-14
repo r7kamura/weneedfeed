@@ -9,9 +9,9 @@ module Weneedfeed
       get '/feeds/:page_id.xml', to: ::Weneedfeed::Controllers::ShowFeed, as: :feed
     end
 
-    # @param [Hash] schema
-    def initialize(schema:)
-      @schema = ::Weneedfeed::Schema.new(schema)
+    # @param [String] schema_path
+    def initialize(schema_path:)
+      @schema = ::Weneedfeed::Schema.load_file(schema_path)
       super()
     end
 

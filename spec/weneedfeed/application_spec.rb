@@ -11,7 +11,7 @@ RSpec.describe Weneedfeed::Application do
 
   let(:app) do
     described_class.new(
-      schema: YAML.load_file('spec/fixtures/example.yml')
+      schema_path: 'spec/fixtures/example.yml'
     )
   end
 

@@ -2,7 +2,6 @@
 
 require 'rack'
 require 'thor'
-require 'yaml'
 
 module Weneedfeed
   class Command < ::Thor
@@ -55,8 +54,7 @@ module Weneedfeed
     )
 
     def server
-      schema = ::YAML.load_file(options[:schema_path])
-      application = Weneedfeed::Application.new(schema: schema)
+      application = Weneedfeed::Application.new(schema_path: options[:schema_path])
       ::Rack::Handler.default.run(application)
     end
   end
