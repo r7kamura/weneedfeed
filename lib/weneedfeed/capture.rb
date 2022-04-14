@@ -53,11 +53,6 @@ module Weneedfeed
       @base_uri ||= ::URI.parse(@base_url)
     end
 
-    # @return [Hash]
-    def schema
-      ::YAML.load_file(@schema_path)
-    end
-
     # @return [String]
     def script_name
       case base_uri.path
