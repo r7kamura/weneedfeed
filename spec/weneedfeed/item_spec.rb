@@ -76,8 +76,8 @@ RSpec.describe Weneedfeed::Item do
         '<img src="/a b.jpg"/>'
       end
 
-      it 'returns invalid URL' do
-        is_expected.to eq('http://example.com/a b.jpg')
+      it 'returns normalized URL' do
+        is_expected.to eq('http://example.com/a%20b.jpg')
       end
     end
   end
@@ -108,8 +108,8 @@ RSpec.describe Weneedfeed::Item do
         '<a href="/a b">dummy</a>'
       end
 
-      it 'returns invalid URL' do
-        is_expected.to eq('http://example.com/a b')
+      it 'returns normalized URL' do
+        is_expected.to eq('http://example.com/a%20b')
       end
     end
   end
