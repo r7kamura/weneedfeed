@@ -3,6 +3,7 @@ PATH
   specs:
     weneedfeed (0.11.0)
       activesupport
+      addressable
       builder
       faraday
       faraday_middleware

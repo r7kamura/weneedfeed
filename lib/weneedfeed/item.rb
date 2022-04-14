@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
+require 'addressable'
 require 'marcel'
-require 'uri'
 
 module Weneedfeed
   class Item
@@ -74,24 +74,20 @@ module Weneedfeed
     def image_url
       return unless image_path_or_url
 
-      ::URI.join(
+      ::Addressable::URI.join(
         @url,
         image_path_or_url
       ).to_s
-    rescue ::URI::InvalidURIError
-      "#{@url}#{image_path_or_url}"
     end
 
     # @return [String]
     def link
       return unless link_path_or_url
 
-      ::URI.join(
+      ::Addressable::URI.join(
         @url,
         link_path_or_url
       ).to_s
-    rescue ::URI::InvalidURIError
-      "#{@url}#{link_path_or_url}"
     end
 
     # @return [Nokogiri::Node, nil]
