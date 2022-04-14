@@ -1,7 +1,18 @@
 # frozen_string_literal: true
 
+require 'yaml'
+
 module Weneedfeed
   class Schema
+    class << self
+      # @param [String] schema_path
+      # @return [Weneedfeed::Schema]
+      def load_file(schema_path)
+        raw = ::YAML.load_file(schema_path)
+        new(raw)
+      end
+    end
+
     # @param [Hash] raw
     def initialize(raw)
       @raw = raw
