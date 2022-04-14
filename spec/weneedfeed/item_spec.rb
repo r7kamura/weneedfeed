@@ -28,6 +28,28 @@ RSpec.describe Weneedfeed::Item do
     HTML
   end
 
+  describe '#guid' do
+    subject do
+      item.guid
+    end
+
+    context 'when link is found' do
+      it 'returns link' do
+        is_expected.to eq(item.link)
+      end
+    end
+
+    context 'when link is not found' do
+      let(:node_raw) do
+        ''
+      end
+
+      it 'returns sha1' do
+        is_expected.to eq('urn:sha1:05a79f06cf3f67f726dae68d18a2290f6c9a50c9')
+      end
+    end
+  end
+
   describe '#image_mime_type' do
     subject do
       item.image_mime_type

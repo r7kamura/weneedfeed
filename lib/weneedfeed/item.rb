@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'addressable'
+require 'digest/sha1'
 require 'marcel'
 
 module Weneedfeed
@@ -48,6 +49,11 @@ module Weneedfeed
       return unless @description_selector
 
       @node.at(@description_selector)&.inner_html
+    end
+
+    # @return [String]
+    def guid
+      link || hashed_title_and_description
     end
 
     # @return [String, nil]
@@ -119,6 +125,13 @@ module Weneedfeed
     end
 
     private
+
+    # @return [String]
+    def hashed_title_and_description
+      source = [title, description].join(':')
+      sha1 = ::Digest::SHA1.hexdigest(source)
+      "urn:sha1:#{sha1}"
+    end
 
     # @return [Nokogiri::Node, nil]
     def time_node
