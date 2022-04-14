@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rack/capture'
-require 'yaml'
 
 module Weneedfeed
   class Capture
