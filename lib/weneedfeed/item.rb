@@ -77,7 +77,7 @@ module Weneedfeed
       ::Addressable::URI.join(
         @url,
         image_path_or_url
-      ).to_s
+      ).normalize.to_s
     end
 
     # @return [String]
@@ -87,7 +87,7 @@ module Weneedfeed
       ::Addressable::URI.join(
         @url,
         link_path_or_url
-      ).to_s
+      ).normalize.to_s
     end
 
     # @return [Nokogiri::Node, nil]
