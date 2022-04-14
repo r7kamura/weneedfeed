@@ -80,7 +80,7 @@ module Weneedfeed
       ).normalize.to_s
     end
 
-    # @return [String]
+    # @return [String, nil]
     def link
       return unless link_path_or_url
 
