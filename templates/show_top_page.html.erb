@@ -6,12 +6,25 @@
     <title>Weneedfeed</title>
   </head>
   <body>
-    <ul>
-      <% @page_schemata.each do |page_schema| %>
-      <li>
-        <a href="<%= feed_path(page_id: page_schema.id) %>"><%= page_schema.title %></a>
-      </li>
-      <% end %>
-    </ul>
+    <section>
+      <header>
+        <h1>Feeds</h1>
+      </header>
+      <ul>
+        <% @page_schemata.each do |page_schema| %>
+        <li>
+          <a href="<%= feed_path(page_id: page_schema.id) %>"><%= page_schema.title %></a>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+    <section>
+      <header>
+        <h1>Others</h1>
+      </header>
+      <ul>
+        <li><a href="<%= opml_path %>">OPML</a></li>
+      </ul>
+    </section>
   </body>
 </html>

@@ -7,6 +7,7 @@ module Weneedfeed
     route do
       get '/', to: ::Weneedfeed::Controllers::ShowTopPage, as: :top_page
       get '/feeds/:page_id.xml', to: ::Weneedfeed::Controllers::ShowFeed, as: :feed
+      get '/opml.xml', to: ::Weneedfeed::Controllers::ShowOpml, as: :opml
     end
 
     # @param [String] schema_path
@@ -23,7 +24,10 @@ module Weneedfeed
 
     # @return [Array<String>]
     def paths
-      ['/'] + @schema.page_ids.map do |page_id|
+      %w[
+        /
+        /opml
+      ] + @schema.page_ids.map do |page_id|
         "/feeds/#{page_id}.xml"
       end
     end
