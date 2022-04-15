@@ -2,7 +2,7 @@
 
 module Weneedfeed
   module Views
-    class ShowFeed < ::Hibana::View
+    class ShowFeed < Base
       include ::Weneedfeed::Helpers::Parameters
 
       # @param [Weneedfeed::Page] page
@@ -28,11 +28,6 @@ module Weneedfeed
       # @return [String]
       def page_id
         path_parameters[:page_id]
-      end
-
-      # @return [Hanami::Router]
-      def router
-        ::Weneedfeed::Application.router
       end
     end
   end
