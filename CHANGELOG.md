@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.16.1 - 2022-04-15
+
 ### Fixed
 
 - Fix bug that opml.xml is not built.
