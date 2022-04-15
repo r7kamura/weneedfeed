@@ -26,7 +26,7 @@ module Weneedfeed
     def paths
       %w[
         /
-        /opml
+        /opml.xml
       ] + @schema.page_ids.map do |page_id|
         "/feeds/#{page_id}.xml"
       end
