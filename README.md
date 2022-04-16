@@ -161,6 +161,8 @@ Usage:
 Options:
   [--schema-path=SCHEMA_PATH]  # Path to weneedfeed YAML schema file.
                                # Default: weneedfeed.yml
+  [--port=PORT]                # TCP port to bind to.
+                               # Default: 8080
 
 Run HTTP server.
 ```
