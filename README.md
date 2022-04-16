@@ -32,6 +32,8 @@ Weneedfeed requires `weneedfeed.yml` that describes URLs and selectors.
 ### Example
 
 ```yaml
+title: Example RSS feeds
+
 pages:
   - id: example1
     title: Example 1
