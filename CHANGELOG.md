@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Support configurable feeds title.
+- Add --port= option to server command.
 
 ## 0.17.0 - 2022-04-15
 
