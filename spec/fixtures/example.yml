@@ -5,6 +5,8 @@ css_selectors: &css_selectors
   item_time_selector: time
   item_title_selector: p:nth-child(2)
 
+title: Example
+
 pages:
   - id: example_css
     title: example name

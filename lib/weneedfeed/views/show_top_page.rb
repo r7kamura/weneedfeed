@@ -3,10 +3,10 @@
 module Weneedfeed
   module Views
     class ShowTopPage < Base
-      # @param [Array<Hash>] page_schemata
-      def initialize(page_schemata:, **argv)
+      # @param [Weneedfeed::Schema] schema
+      def initialize(schema:, **argv)
         super(**argv)
-        @page_schemata = page_schemata
+        @schema = schema
       end
 
       private
@@ -25,6 +25,11 @@ module Weneedfeed
       # @return [String]
       def opml_path
         "#{base_path}#{router.path(:opml)}"
+      end
+
+      # @return [Array<String>]
+      def page_schemata
+        @schema.page_schemata.sort_by(&:title)
       end
 
       # @return [Hanami::Router]

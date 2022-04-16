@@ -55,70 +55,75 @@ pages:
     item_title_selector: .//p[2]
 ```
 
-### `id`
+### `title`
+
+- optional (default: `"Weneedfeed"`)
+- Used for feeds title on top page and OPML outline.
+
+### `pages.id`
 
 Feed ID.
 
 - required
 - Used for feed URL and `<link>` element in `<channel>` element.
 
-### `title`
+### `pages.title`
 
 Feed title.
 
 - required
 - Used for RSS `<title>` element in `<channel>` element.
 
-### `description`
+### `pages.description`
 
 Feed description.
 
 - optional
 - Used for RSS `<description>` element in `<channel>` element.
 
-### `url`
+### `pages.url`
 
 HTML source URL.
 
 - required
 - Used to fetch HTML page for building feed.
 
-### `item_selector`
+### `pages.item_selector`
 
 CSS or XPath selector to search each item.
 
 - required
 - Equivalent unit to RSS `<item>` element.
 
-### `item_link_selector`
+### `pages.item_link_selector`
 
 CSS or XPath selector to find `<a>` element in each item.
 
 - required
 - Used for `<link>` in `<item>`.
 
-### `item_title_selector`
+### `pages.item_title_selector`
 
 CSS or XPath selector to find element with title information in each item.
 
 - required
 - Used for `<title>` in `<item>`.
 
-### `item_description_selector`
+### `pages.item_description_selector`
 
 CSS or XPath selector to find element with description information in each item.
 
 - optional
 - Used for `<description>` in `<item>`.
 
-### `item_image_selector`
+### `pages.item_image_selector`
 
 CSS or XPath selector to find `<img>`element in each item.
 
 - optional
 - Used for `<enclosure>` in `<item>`.
 
-### `item_time_selector`
+### `pages.item_time_selector`
 
 CSS or XPath selector to find element with datetime information in each item.
 

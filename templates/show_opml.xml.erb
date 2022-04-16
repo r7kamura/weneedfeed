@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
   <head>
-    <title>Weneedfeed</title>
+    <title><%= @schema.title %></title>
   </head>
   <body>
-    <outline text="Weneedfeed" title="Weneedfeed">
-      <% @page_schemata.each do |page_schema| %>
+    <outline text="<%= @schema.title %>" title="<%= @schema.title %>">
+      <% page_schemata.each do |page_schema| %>
         <outline type="rss" text="<%= page_schema.title %>" title="<%= page_schema.title %>" xmlUrl="<%= "#{request.base_url}#{feed_path(page_id: page_schema.id)}" %>" htmlUrl="<%= page_schema.url %>"/>
       <% end %>
     </outline>

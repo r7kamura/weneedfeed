@@ -4,6 +4,8 @@ require 'yaml'
 
 module Weneedfeed
   class Schema
+    DEFAULT_TITLE = 'Weneedfeed'
+
     class << self
       # @param [String] schema_path
       # @return [Weneedfeed::Schema]
@@ -47,6 +49,11 @@ module Weneedfeed
           url: hash['url'],
         )
       end
+    end
+
+    # @return [String]
+    def title
+      @raw['title'] || DEFAULT_TITLE
     end
   end
 end
