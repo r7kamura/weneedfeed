@@ -53,9 +53,16 @@ module Weneedfeed
       type: :string
     )
 
+    method_option(
+      :port,
+      default: '8080',
+      desc: 'TCP port to bind to.',
+      type: :string
+    )
+
     def server
       application = Weneedfeed::Application.new(schema_path: options[:schema_path])
-      ::Rack::Handler.default.run(application)
+      ::Rack::Handler.default.run(application, Port: options[:port])
     end
   end
 end
