@@ -1,13 +1,16 @@
+css_selectors: &css_selectors
+  item_selector: li
+  item_description_selector: p:nth-child(3)
+  item_link_selector: a
+  item_time_selector: time
+  item_title_selector: p:nth-child(2)
+
 pages:
   - id: example_css
     title: example name
     description: An example of CSS selectors.
     url: http://example.com/
-    item_selector: li
-    item_description_selector: p:nth-child(3)
-    item_link_selector: a
-    item_time_selector: time
-    item_title_selector: p:nth-child(2)
+    <<: *css_selectors
   - id: example_xpath
     title: example name
     url: http://example.com/
