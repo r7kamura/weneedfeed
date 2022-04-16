@@ -7,12 +7,12 @@ module Weneedfeed
         response.content_type = 'application/xml; charset=utf-8'
         response.write(
           ::Weneedfeed::Views::ShowOpml.new(
-            page_schemata: schema.page_schemata.sort_by(&:title),
             partial_template_path: ::File.expand_path(
               'templates/show_opml.xml.erb',
               "#{__dir__}/../../.."
             ),
-            request: request
+            request: request,
+            schema: schema
           ).to_s
         )
       end

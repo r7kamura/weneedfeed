@@ -4,16 +4,15 @@ module Weneedfeed
   module Controllers
     class ShowTopPage < ::Weneedfeed::Controllers::Base
       def call
-        page_schemata = schema.page_schemata.sort_by(&:title)
         response.content_type = 'text/html'
         response.write(
           ::Weneedfeed::Views::ShowTopPage.new(
-            page_schemata: page_schemata,
             partial_template_path: ::File.expand_path(
               'templates/show_top_page.html.erb',
               "#{__dir__}/../../.."
             ),
-            request: request
+            request: request,
+            schema: schema
           ).to_s
         )
       end
