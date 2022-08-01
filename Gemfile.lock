@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    weneedfeed (0.18.0)
+    weneedfeed (0.19.0)
       activesupport
       addressable
       builder
@@ -17,7 +17,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.2.3)
+    activesupport (7.0.3.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -46,8 +46,8 @@ GEM
     faraday-em_synchrony (1.0.0)
     faraday-excon (1.1.0)
     faraday-httpclient (1.0.1)
-    faraday-multipart (1.0.3)
-      multipart-post (>= 1.2, < 3)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
@@ -55,34 +55,34 @@ GEM
     faraday-retry (1.0.3)
     faraday_middleware (1.2.0)
       faraday (~> 1.0)
-    hanami-router (2.0.0.alpha5)
+    hanami-router (2.0.0.beta1)
       mustermann (~> 1.0)
       mustermann-contrib (~> 1.0)
       rack (~> 2.0)
-    hansi (0.2.0)
+    hansi (0.2.1)
     hashdiff (1.0.1)
     hibana (0.2.0)
       hanami-router (>= 2.0.0.alpha3)
       rack
       tilt
-    i18n (1.10.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     marcel (1.0.2)
     mini_portile2 (2.8.0)
-    minitest (5.15.0)
-    multipart-post (2.1.1)
-    mustermann (1.1.1)
+    minitest (5.16.2)
+    multipart-post (2.2.3)
+    mustermann (1.1.2)
       ruby2_keywords (~> 0.0.1)
-    mustermann-contrib (1.1.1)
+    mustermann-contrib (1.1.2)
       hansi (~> 0.2.0)
-      mustermann (= 1.1.1)
-    nokogiri (1.13.4)
+      mustermann (= 1.1.2)
+    nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
-    psych (4.0.3)
+    psych (4.0.4)
       stringio
     public_suffix (4.0.7)
     racc (1.6.0)
@@ -125,10 +125,10 @@ GEM
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
-    stringio (3.0.1)
+    stringio (3.0.2)
     thor (1.2.1)
-    tilt (2.0.10)
-    tzinfo (2.0.4)
+    tilt (2.0.11)
+    tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
     webmock (3.14.0)
