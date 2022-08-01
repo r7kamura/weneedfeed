@@ -146,7 +146,7 @@ RSpec.describe Weneedfeed::Item do
         '<time datetime="2000-01-01T00:00:00+09:00">2000-01-02</time>'
       end
 
-      it 'returns a Time of 2000-01-01 00:00:00 in +09:00' do
+      it 'returns expected time' do
         is_expected.to eq(Time.new(2000, 1, 1, 0, 0, 0, '+09:00'))
       end
     end
@@ -156,7 +156,7 @@ RSpec.describe Weneedfeed::Item do
         '<time>2000-01-01</time>'
       end
 
-      it 'returns a Time of 2000-01-01 00:00:00 in local time zone' do
+      it 'returns expected time' do
         is_expected.to eq(Time.new(2000, 1, 1))
       end
     end
@@ -166,8 +166,38 @@ RSpec.describe Weneedfeed::Item do
         '<time>2000年1月1日</time>'
       end
 
-      it 'returns a Time of 2000-01-01 00:00:00 in local time zone' do
+      it 'returns expected time' do
         is_expected.to eq(Time.new(2000, 1, 1))
+      end
+    end
+
+    context 'with 1月1日' do
+      let(:node_raw) do
+        '<time>1月1日</time>'
+      end
+
+      it 'returns expected Time' do
+        is_expected.to eq(Time.new(Time.now.year, 1, 1))
+      end
+    end
+
+    context 'with 12月31日' do
+      let(:node_raw) do
+        '<time>12月31日</time>'
+      end
+
+      it 'returns expected Time' do
+        is_expected.to eq(Time.new(Time.now.year - 1, 12, 31))
+      end
+    end
+
+    context 'with 1月1日配信' do
+      let(:node_raw) do
+        '<time>1月1日配信</time>'
+      end
+
+      it 'returns expected Time' do
+        is_expected.to eq(Time.new(Time.now.year, 1, 1))
       end
     end
   end

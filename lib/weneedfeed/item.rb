@@ -10,11 +10,17 @@ module Weneedfeed
       # @param [String] string
       # @return [Time, nil]
       def parse_time(string)
-        ::Time.parse(string)
-      rescue ArgumentError, RangeError
+        ::Time.strptime(string, '%Y年%m月%d日')
+      rescue ::ArgumentError
         begin
-          ::Time.strptime(string, '%Y年%m月%d日')
+          time = ::Time.strptime(string, '%m月%d日')
+          time -= 60 * 60 * 24 * 365 if time > Time.now
+          time
         rescue ArgumentError
+          begin
+            ::Time.parse(string)
+          rescue ArgumentError, RangeError
+          end
         end
       end
     end
