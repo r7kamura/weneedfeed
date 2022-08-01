@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.19.2 - 2022-08-01
+
 ### Fixed
 
 - Fix XML excape on OPML.
