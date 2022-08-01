@@ -191,9 +191,9 @@ RSpec.describe Weneedfeed::Item do
       end
     end
 
-    context 'with 1月1日配信' do
+    context 'with " 1月1日配信 "' do
       let(:node_raw) do
-        '<time>1月1日配信</time>'
+        '<time> 1月1日配信 </time>'
       end
 
       it 'returns expected Time' do

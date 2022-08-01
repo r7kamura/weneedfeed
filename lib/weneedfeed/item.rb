@@ -149,7 +149,7 @@ module Weneedfeed
       node = time_node
       return unless node
 
-      node['datetime'] || node.inner_text
+      node['datetime'] || node.inner_text&.strip
     end
   end
 end
