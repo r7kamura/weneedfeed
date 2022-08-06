@@ -170,3 +170,9 @@ Run HTTP server.
 ## GitHub Actions Integration
 
 Use [weneedfeed-action](https://github.com/r7kamura/weneedfeed-action) for invoking weneedfeed on GitHub Actions.
+
+### Examples
+
+- https://github.com/r7kamura/weneedfeed-comic-newtype
+- https://github.com/r7kamura/weneedfeed-mangacross
+- https://github.com/r7kamura/weneedfeed-webace
