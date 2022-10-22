@@ -6,6 +6,9 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.5
 
+Gemspec/RequireMFA:
+  Enabled: false
+
 Lint/SuppressedException:
   Enabled: false
 
