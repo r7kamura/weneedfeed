@@ -4,7 +4,11 @@ require 'yaml'
 
 RSpec.describe Weneedfeed::Scraping do
   before do
-    stub_request(:get, 'http://example.com/').and_return(
+    stub_request(:get, 'http://example.com/').with(
+      headers: {
+        'User-Agent' => 'Weneedfeed'
+      }
+    ).and_return(
       body: File.read('spec/fixtures/example.html')
     )
   end
@@ -37,7 +41,7 @@ RSpec.describe Weneedfeed::Scraping do
         stub_request(:get, 'http://example.com/').and_return(
           body: File.read('spec/fixtures/example.json'),
           headers: {
-            'Content-Type' => 'application/json',
+            'Content-Type' => 'application/json'
           },
         )
       end

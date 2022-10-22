@@ -5,10 +5,14 @@ require 'nokogiri'
 
 module Weneedfeed
   class Scraping
+    DEFAULT_HEADERS = {
+      'User-Agent' => 'Weneedfeed'
+    }.freeze
+
     class << self
       # @return [Faraday::Connection]
       def faraday_connection
-        @faraday_connection ||= ::Faraday.new do |connection|
+        @faraday_connection ||= ::Faraday.new(headers: DEFAULT_HEADERS) do |connection|
           connection.use ::Weneedfeed::FaradayResponseMiddleware
         end
       end
