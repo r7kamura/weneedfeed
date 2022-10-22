@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    weneedfeed (0.19.3)
+    weneedfeed (0.20.0)
       activesupport
       addressable
       builder
@@ -17,7 +17,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.3.1)
+    activesupport (7.0.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -30,7 +30,7 @@ GEM
     crack (0.4.5)
       rexml
     diff-lcs (1.5.0)
-    faraday (1.10.0)
+    faraday (1.10.2)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -69,20 +69,20 @@ GEM
       concurrent-ruby (~> 1.0)
     marcel (1.0.2)
     mini_portile2 (2.8.0)
-    minitest (5.16.2)
+    minitest (5.16.3)
     multipart-post (2.2.3)
     mustermann (1.1.2)
       ruby2_keywords (~> 0.0.1)
     mustermann-contrib (1.1.2)
       hansi (~> 0.2.0)
       mustermann (= 1.1.2)
-    nokogiri (1.13.8)
+    nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
-    psych (4.0.4)
+    psych (4.0.6)
       stringio
     public_suffix (4.0.7)
     racc (1.6.0)
