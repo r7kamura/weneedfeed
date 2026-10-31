@@ -17,8 +17,8 @@ jobs:
           - '4.0'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v7.0.1
+      - uses: ruby/setup-ruby@v1.336.0
         with:
           bundler-cache: true
           ruby-version: ${{ matrix.ruby }}
@@ -26,12 +26,12 @@ jobs:
   rubocop:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1.336.0
         with:
           bundler-cache: true
           ruby-version: '3.3'
-      - uses: r7kamura/rubocop-problem-matchers-action@v1
+      - uses: r7kamura/rubocop-problem-matchers-action@v1.2.2
       - run: bundle exec rubocop --parallel
