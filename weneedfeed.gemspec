@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Generate feeds from URL and selectors.'
   spec.homepage      = 'https://github.com/r7kamura/weneedfeed'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 3.3')
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
@@ -26,15 +26,16 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'activesupport'
-  spec.add_runtime_dependency 'addressable'
-  spec.add_runtime_dependency 'builder'
-  spec.add_runtime_dependency 'faraday'
-  spec.add_runtime_dependency 'faraday_middleware'
-  spec.add_runtime_dependency 'hibana', '>= 0.2.1'
-  spec.add_runtime_dependency 'marcel'
-  spec.add_runtime_dependency 'nokogiri'
-  spec.add_runtime_dependency 'psych', '>= 4'
-  spec.add_runtime_dependency 'rack-capture', '>= 0.4.0'
-  spec.add_runtime_dependency 'thor'
+  spec.add_dependency 'activesupport'
+  spec.add_dependency 'addressable'
+  spec.add_dependency 'builder'
+  spec.add_dependency 'faraday'
+  spec.add_dependency 'faraday_middleware'
+  spec.add_dependency 'marcel'
+  spec.add_dependency 'nokogiri'
+  spec.add_dependency 'psych', '>= 4'
+  spec.add_dependency 'rack'
+  spec.add_dependency 'rack-capture', '>= 0.4.0'
+  spec.add_dependency 'thor'
+  spec.add_dependency 'tilt'
 end
