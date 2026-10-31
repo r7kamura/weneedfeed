@@ -1,8 +1,5 @@
 # Weneedfeed
 
-[![](https://badge.fury.io/rb/weneedfeed.svg)](https://rubygems.org/gems/weneedfeed)
-[![](https://github.com/r7kamura/weneedfeed/workflows/test/badge.svg)](https://github.com/r7kamura/weneedfeed/actions?query=workflow%3Atest)
-
 Generate feeds from URL and selectors.
 
 ## Installation
