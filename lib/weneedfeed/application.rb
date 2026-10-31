@@ -1,25 +1,27 @@
 # frozen_string_literal: true
 
-require 'hibana'
-
 module Weneedfeed
-  class Application < ::Hibana::Application
-    route do
-      get '/', to: ::Weneedfeed::Controllers::ShowTopPage, as: :top_page
-      get '/feeds/:page_id.xml', to: ::Weneedfeed::Controllers::ShowFeed, as: :feed
-      get '/opml.xml', to: ::Weneedfeed::Controllers::ShowOpml, as: :opml
+  class Application
+    class << self
+      # @return [Weneedfeed::Router]
+      def router
+        @router ||= ::Weneedfeed::Router.new.tap do |router|
+          router.get '/', to: ::Weneedfeed::Controllers::ShowTopPage, as: :top_page
+          router.get '/feeds/:page_id.xml', to: ::Weneedfeed::Controllers::ShowFeed, as: :feed
+          router.get '/opml.xml', to: ::Weneedfeed::Controllers::ShowOpml, as: :opml
+        end
+      end
     end
 
     # @param [String] schema_path
     def initialize(schema_path:)
       @schema = ::Weneedfeed::Schema.load_file(schema_path)
-      super()
     end
 
     # @param [Hash] env
     def call(env)
       env['weneedfeed.schema'] = @schema
-      super
+      self.class.router.call(env)
     end
 
     # @return [Array<String>]

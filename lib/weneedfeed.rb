@@ -13,6 +13,7 @@ module Weneedfeed
   autoload :Page, 'weneedfeed/page'
   autoload :PageSchema, 'weneedfeed/page_schema'
   autoload :Schema, 'weneedfeed/schema'
+  autoload :Router, 'weneedfeed/router'
   autoload :Scraping, 'weneedfeed/scraping'
   autoload :Views, 'weneedfeed/views'
 end

@@ -31,11 +31,6 @@ module Weneedfeed
       def page_schemata
         @schema.page_schemata.sort_by(&:title)
       end
-
-      # @return [Hanami::Router]
-      def router
-        ::Weneedfeed::Application.router
-      end
     end
   end
 end
